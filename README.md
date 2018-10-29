@@ -1,35 +1,33 @@
-<<<<<<< HEAD
-# thirdworld
+# 第三方世界
 
-> A Vue.js project
+> 一个有梦想的vue项目
 
 ## Build Setup
 
-``` bash
-# install dependencies
+# 添加依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 服务默认启动在 localhost:8080
 npm run dev
 
-# build for production with minification
+# 对象打包 ---> 根目录 下的dist文件夹
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
+# 启动unit测试
 npm run unit
 
-# run e2e tests
+# 启动e2e测试
 npm run e2e
 
-# run all tests
+# 启动所有测试
 npm test
-```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-=======
-# thirdWorld-vue
+# 我们的目标 ---> 先搞起来
 第三方世界，让世界更美好！
->>>>>>> 0b7b46f1e941287b49a0587b6c7c469974e50cc7
+
+## 那河畔中的金柳，是夕阳中的新娘；波光里的艳影，在我心头荡漾。
+
+## 合作人
+毒牙（Jimmery）, mayben0t
+
+
