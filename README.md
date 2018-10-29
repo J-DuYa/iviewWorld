@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # thirdworld
 
 > A Vue.js project
@@ -28,3 +29,7 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# thirdWorld-vue
+第三方世界，让世界更美好！
+>>>>>>> 0b7b46f1e941287b49a0587b6c7c469974e50cc7
