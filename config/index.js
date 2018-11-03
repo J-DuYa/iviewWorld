@@ -10,12 +10,21 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      // 配置代理
+      '/thirdWorld': {
+        target: 'http://192.168.0.104', // 改成自己的IP地址
+        changeOrigin: true,
+        pathRewrite: {
+          '^/thirdWorld': ''
+        }
+      }
+    },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    host: 'localhost', // can be overwritten by process.env.HOST // 要想IP地址訪問要將自己的地址改成自己IP地址
+    port: 8080, //  這裡修改成自己想要的端口號（不要和後台重複）
+    autoOpenBrowser: true, // 指令后自動展示到頁面上
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-

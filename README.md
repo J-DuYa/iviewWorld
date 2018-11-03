@@ -28,6 +28,26 @@ npm test
 
 ### 那河畔中的金柳，是夕阳中的新娘；波光里的艳影，在我心头荡漾。-- 徐志摩《再别康桥》
 
+```
+***部分地方講解***
+`
+    proxyTable: {
+      // 配置代理
+      '/api': {
+        target: '自己後台的地址', // 改成自己的IP地址
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '' // 這一步是選擇的 但是最好加一下防止和自己的其他系統接口衝突
+        }
+      }
+    },
+`
+
+`
+    host: 'localhost', // can be overwritten by process.env.HOST // 要想IP地址訪問要將自己的地址改成自己IP地址
+    port: 8080, //  這裡修改成自己想要的端口號（不要和後台重複）
+`
+```
 ### 合作人
 > 毒牙（Jimmery）, mayben0t
 
