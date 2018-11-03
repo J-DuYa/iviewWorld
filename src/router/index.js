@@ -7,7 +7,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
-    {
+    { // 默认进入首页 后面改成登陆页面
       path: '/',
       name: '/home',
       component: Home
