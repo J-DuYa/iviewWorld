@@ -9,11 +9,11 @@ export default new Router({
   routes: [
     { // 默认进入首页 后面改成登陆页面
       path: '/',
-      name: '/home',
+      name: 'home',
       component: Home
     }, { // 首页
       path: '/home',
-      name: '/home',
+      name: 'home',
       component: Home
     }
   ]
