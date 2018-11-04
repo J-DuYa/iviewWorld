@@ -11,10 +11,10 @@ npm install
 npm run dev
 
 * 下面是额外的shell命令（了解就行）
-  > 1、对象打包 ---> 根目录 下的dist文件夹 npm run build
-  > 2、启动unit测试 npm run unit
-  > 3、启动e2e测试 npm run e2e
-  > 4、启动所有测试 npm test
+  > 1、对象打包 ---> 根目录 下的dist文件夹 npm run build  
+  > 2、启动unit测试 npm run unit  
+  > 3、启动e2e测试 npm run e2e  
+  > 4、启动所有测试 npm test  
 
 > 我们的目标 ---> 先搞起来   
 > 理想：第三方世界，让世界更美好！  
@@ -45,6 +45,7 @@ npm run dev
 > 提示   封装的HTTP请求只是初始的状态， 之后需要进一步的封装  封装的http请求的目录在：/src/http/apis.js文件夹下 
 
 > 状态机(初步)
+  
 |状态|状态精灵提示|
 |:---|:---|
 |200|请求成功|
