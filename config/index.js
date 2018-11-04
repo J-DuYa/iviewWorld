@@ -13,7 +13,7 @@ module.exports = {
     proxyTable: {
       // 配置代理
       '/thirdWorld': {
-        target: 'http://192.168.0.104', // 改成自己的IP地址
+        target: 'http://192.168.0.104:9100', // 改成自己的IP地址
         changeOrigin: true,
         pathRewrite: {
           '^/thirdWorld': ''

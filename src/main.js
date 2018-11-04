@@ -9,6 +9,9 @@ import ajax from '@/http/apis'
 Vue.config.productionTip = false
 Vue.use(iView)
 
+// 请求
+window.ajax = ajax;
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

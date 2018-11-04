@@ -18,10 +18,16 @@ export default {
     return {};
   },
   methods: {
-    
+    getData() {
+      ajax.get('/thirdWorld/hello').then((res) => {
+        console.log(res);
+      }).catch((err) => {
+        console.log(err);
+      });
+    }
   },
   created () {
-    
+    this.getData();
   }
 };
 </script>
