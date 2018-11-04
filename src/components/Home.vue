@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Button type="default" ghost>Default</Button>
+    <Button type="default" ghost @click="open">Default</Button>
     <Button type="primary" ghost>Primary</Button>
     <Button type="dashed" ghost>Dashed</Button>
     <Button type="text" ghost>Text</Button>
@@ -13,20 +13,30 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: "Home",
   data() {
     return {};
   },
   methods: {
     getData() {
-      ajax.get('/thirdWorld/hello').then((res) => {
-        console.log(res);
-      }).catch((err) => {
-        console.log(err);
+      ajax
+        .get("/thirdWorld/hello")
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    // 测试iview的使用方法
+    open() {
+      this.$Notice.open({
+        title: "正确提示",
+        desc: '使用正确'
       });
     }
   },
-  created () {
+  created() {
     this.getData();
   }
 };

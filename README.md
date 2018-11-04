@@ -48,7 +48,13 @@ npm test
     host: 'localhost', // can be overwritten by process.env.HOST // 要想IP地址訪問要將自己的地址改成自己IP地址
     port: 8080, //  這裡修改成自己想要的端口號（不要和後台重複）
 `
-  
+
+`
+  封装的HTTP请求只是初始的状态， 之后需要进一步的封装  
+    
+  封装的http请求的目录在：/src/http/apis.js文件夹下
+    
+`
 ### 合作人
 > 毒牙（Jimmery）, mayben0t
 
