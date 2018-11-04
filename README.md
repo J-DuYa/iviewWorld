@@ -2,7 +2,7 @@
 
 > 一个有梦想的vue项目
 
-## Build Setup
+## 项目启动
 
 1、 添加依赖
 npm install
@@ -10,18 +10,11 @@ npm install
 2、 服务默认启动在 localhost:8080
 npm run dev
 
-> 下面是额外的shell命令（了解就行）
-### 对象打包 ---> 根目录 下的dist文件夹
-npm run build
-
-### 启动unit测试
-npm run unit
-
-### 启动e2e测试
-npm run e2e
-
-### 启动所有测试
-npm test
+* 下面是额外的shell命令（了解就行）
+  > 1、对象打包 ---> 根目录 下的dist文件夹 npm run build
+  > 2、启动unit测试 npm run unit
+  > 3、启动e2e测试 npm run e2e
+  > 4、启动所有测试 npm test
 
 > 我们的目标 ---> 先搞起来   
 > 理想：第三方世界，让世界更美好！  
@@ -31,7 +24,7 @@ npm test
 > 只身一人，默默街头走，身无人，旁无物，只剩无尽暗默，倔强不回头，永远不回首。  
 
 ***部分地方講解***  
-`
+```
     proxyTable: {
       // 配置代理
       '/api': {
@@ -42,19 +35,20 @@ npm test
         }
       }
     },
-`
+```
   
-`
+```
     host: 'localhost', // can be overwritten by process.env.HOST // 要想IP地址訪問要將自己的地址改成自己IP地址
     port: 8080, //  這裡修改成自己想要的端口號（不要和後台重複）
-`
+```
 
-`
-  封装的HTTP请求只是初始的状态， 之后需要进一步的封装  
-    
-  封装的http请求的目录在：/src/http/apis.js文件夹下
-    
-`
+> 提示   封装的HTTP请求只是初始的状态， 之后需要进一步的封装  封装的http请求的目录在：/src/http/apis.js文件夹下 
+
+> 状态机(初步)
+|状态|状态精灵提示|
+|:---|:---|
+|200|请求成功|
+
 ### 合作人
 > 毒牙（Jimmery）, mayben0t
 
