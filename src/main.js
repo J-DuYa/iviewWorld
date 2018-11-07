@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+
 // 引入iview
 import iView from 'iview'
 import 'iView/dist/styles/iview.css'
+import './theme.less';
 import ajax from '@/http/apis'
 
 Vue.config.productionTip = false
