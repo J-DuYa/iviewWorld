@@ -2,24 +2,30 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Login from '@/view/login'
+import TLayout from '@/view/layout'
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
-    { // 默认进入首页 后面改成登陆页面
-      path: '/',
-      name: 'login',
-      component: Login
-    }, { // 首页
-      path: '/home',
-      name: 'home',
-      component: Home
-    }, { // 登录
+      { // 登录
         path: '/login',
         name: 'login',
         component: Login
-    }
+      }, { // home页面
+          path: '/',
+          name: 'index',
+          component: TLayout,
+          redirect: 'home',
+          children: [
+              { // 登录
+                  path: '/home',
+                  name: 'home',
+                  component: Home
+              }
+          ]
+      }
+
   ]
 })
