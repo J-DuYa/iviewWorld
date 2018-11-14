@@ -9,7 +9,7 @@
 1、 添加依赖
 npm install
 
-2、 服务默认启动在 localhost:8080
+2、 服务默认启动在 localhost:8080(可以在/config/index.js中修改端口号)
 npm run dev
 
 * 下面是额外的shell命令（了解就行）
@@ -51,6 +51,9 @@ npm run dev
 |状态|状态精灵提示|
 |:---|:---|
 |200|请求成功|
+|403|接口超时|
+|404|未连接到接口|
+|500|服务器跑丢了|
 
 ### 合作人
 > 毒牙（Jimmery）, mayben0t

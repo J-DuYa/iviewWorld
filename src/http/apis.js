@@ -7,17 +7,22 @@
  */
 import axios from 'axios'
 import Qs from 'qs'
+// 全局显示通知
+import { Notice } from 'iview'
 
 let _that = this;
 // 封装通用的请求状态信息 错误请求统一管理
 let http = {
     status: {
-        '200': '请求成功!'
+        '200': '请求成功!',
+        '403': '请求超时',
+        '404': '未连接到接口',
+        '500': '服务器跑丢了'
     }
 };
 
 export default {
-    // post
+    // 普通post请求
     post(url, param) {
         return new Promise((resolve, reject) => {
             axios({
@@ -25,17 +30,14 @@ export default {
                 url,
                 params: Qs.stringify(param)
             }).then((res) => {
-                if(res.status == '200') {
-                    resolve(res.data)
-                } else {
-
-                }
+                if(res.status == '200') resolve(res.data)
+                reject(res)
             }).catch((err) => {
-                reject(err);
+                throw new Error(err)
             })
         })
     },
-    // get
+    // 普通get请求
     get(url, param) {
         return new Promise((resolve, reject) => {
             axios({
@@ -43,13 +45,10 @@ export default {
                 url,
                 params: param,
             }).then(res => {
-                if(res.status == '200') {
-                    resolve(res.data)
-                } else {
-
-                }
+                if(res.status == '200') resolve(res.data)
+                reject(res)
             }).catch((err) => {
-                reject(err);
+                throw new Error(err)
             })
         })
     }
