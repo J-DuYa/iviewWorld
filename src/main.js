@@ -5,8 +5,10 @@ import router from './router'
 // 引入iview
 import iView from 'iview'
 import 'iView/dist/styles/iview.css'
-import './theme.less';
 import ajax from '@/http/apis'
+
+import './theme.less';
+import '@/assets/scss/main.scss'
 
 Vue.config.productionTip = false
 Vue.use(iView)

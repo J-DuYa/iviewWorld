@@ -1,0 +1,19 @@
+.github {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+  }
+  .duya {
+    margin: 1rem 0;
+    font-size: .8rem;
+  }
+  .address {
+    font-size: .6rem;
+  }
+}

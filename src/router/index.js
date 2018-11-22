@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
 import Login from '@/view/login'
 import TLayout from '@/view/layout'
 
@@ -17,13 +16,22 @@ export default new Router({
           path: '/',
           name: 'index',
           component: TLayout,
-          redirect: 'home',
+          redirect: 'github',
           children: [
-              { // 登录
+              { // 主页
                   path: '/home',
                   name: 'home',
-                  component: Home
+                  component: () => import('@/view/Home')
+              }, { // 个人信息页面
+                  path: '/basicInfo',
+                  name: 'basicInfo',
+                  component: () => import('@/view/BasicInfo')
+              }, { // github地址
+                  path: '/github',
+                  name: 'github',
+                  component: () => import('@/view/Github')
               }
+
           ]
       }
 

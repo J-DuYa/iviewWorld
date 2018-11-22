@@ -1,19 +1,14 @@
 <template>
     <div class="layout">
         <Layout>
-            <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
-                <Menu active-name="1-2" theme="dark" width="auto" :class="menuitemClasses">
-                    <MenuItem name="1-1">
-                        <Icon type="ios-navigate"></Icon>
-                        <span>Option 1</span>
-                    </MenuItem>
-                    <MenuItem name="1-2">
-                        <Icon type="ios-search"></Icon>
-                        <span>Option 2</span>
-                    </MenuItem>
-                    <MenuItem name="1-3">
-                        <Icon type="ios-settings"></Icon>
-                        <span>Option 3</span>
+            <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed" class="menuSider">
+                <div class="headerImg">
+                    <img :src="github"/>
+                </div>
+                <Menu :active-name="routers.length != 0 ? routers[0].id : ''" theme="dark" width="auto" :class="menuitemClasses">
+                    <MenuItem :name="route.id" :to="route.menuUrl" v-for="(route, index) in routers" :key="index">
+                        <Icon :type="route.icon"></Icon>
+                        <span>{{route.title}}</span>
                     </MenuItem>
                 </Menu>
             </Sider>
@@ -32,17 +27,23 @@
 </template>
 
 <script>
+    import routers from '@/components/MenuRouter/index'
+    import github from '@/assets/images/github/github.jpg'
+
     export default {
         name: "TLayout",
         data() {
             return {
-                isCollapsed: false
+                isCollapsed: false,
+                routers: routers,
+                github: github
             }
         },
         methods: {
             collapsedSider () {
                 this.$refs.side1.toggleCollapse();
-            }
+            },
+            // 循环遍历路由
         },
         computed: {
             rotateIcon () {
@@ -62,10 +63,24 @@
 </script>
 
 <style lang="scss">
+    .headerImg {
+        margin: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+           width: 40%;
+           height: 40%;
+           border-radius: 100%;
+        }
+    }
     .layout{
         background: #f5f7f9;
         position: relative;
         overflow: hidden;
+        .menuSider {
+            font-size: 1rem!important;
+        }
     }
     .layout-header-bar{
         background: #fff;
