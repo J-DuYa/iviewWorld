@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-> 线上访问地址: http://212.64.54.51
+> [线上访问地址](http://212.64.54.51)  
 > 一个有梦想的vue项目
 
 ## 项目启动
