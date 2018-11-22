@@ -5,37 +5,29 @@
                 <div class="headerImg">
                     <img :src="github"/>
                 </div>
-                <Menu :active-name="routers.length != 0 ? routers[0].id : ''" theme="dark" width="auto" :class="menuitemClasses">
-                    <MenuItem :name="route.id" :to="route.menuUrl" v-for="(route, index) in routers" :key="index">
-                        <Icon :type="route.icon"></Icon>
-                        <span>{{route.title}}</span>
-                    </MenuItem>
-                </Menu>
+                <MenuSider :menuitemClasses.sync="menuitemClasses" />
             </Sider>
             <Layout>
                 <Header :style="{padding: 0}" class="layout-header-bar">
                     <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
                 </Header>
-                <Content :style="{margin: '20px', background: '#fff', minHeight: '260px'}">
-                    <keep-alive>
-                        <router-view/>
-                    </keep-alive>
-                </Content>
+                <Page />
             </Layout>
         </Layout>
     </div>
 </template>
 
 <script>
-    import routers from '@/components/MenuRouter/index'
     import github from '@/assets/images/github/github.jpg'
+    import MenuSider from './components/MenuSider'
+    import Page from './components/Page'
 
     export default {
         name: "TLayout",
+        components: { MenuSider, Page },
         data() {
             return {
                 isCollapsed: false,
-                routers: routers,
                 github: github
             }
         },
