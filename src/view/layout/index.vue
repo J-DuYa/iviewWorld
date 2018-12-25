@@ -1,16 +1,17 @@
 <template>
     <div class="layout">
         <Layout>
-            <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed" class="menuSider">
+            <Sider ref="sideRoute" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed" class="menuSider">
                 <div class="headerImg">
                     <img :src="github"/>
                 </div>
-                <MenuSider :menuitemClasses.sync="menuitemClasses" />
+                <MenuSider :menuitemClasses.sync="menuitemClasses" class="th_Menu" :isCollapsed.sync="isCollapsed"/>
             </Sider>
             <Layout>
                 <Header :style="{padding: 0}" class="layout-header-bar">
                     <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
                 </Header>
+                <!-- 标题   -->
                 <Page />
             </Layout>
         </Layout>
@@ -33,7 +34,7 @@
         },
         methods: {
             collapsedSider () {
-                this.$refs.side1.toggleCollapse();
+                this.$refs['sideRoute'].toggleCollapse();
             },
             // 循环遍历路由
         },
@@ -66,6 +67,13 @@
            border-radius: 100%;
         }
     }
+    .th_Menu {
+        overflow: hidden;
+        .ivu-menu {
+
+        }
+    }
+
     .layout{
         background: #f5f7f9;
         position: relative;
@@ -109,6 +117,9 @@
     .collapsed-menu span{
         width: 0px;
         transition: width .2s ease;
+    }
+    .collapsed-menu .ivu-menu-submenu-title-icon {
+        display: none;
     }
     .collapsed-menu i{
         transform: translateX(5px);
