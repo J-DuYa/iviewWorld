@@ -18,6 +18,9 @@ import HeadCard from '@/components/HeadCard'
 Vue.config.productionTip = false
 Vue.use(iView)
 
+// store
+import store from './store'
+
 // 全局组件
 Vue.component(TitleTip.name, TitleTip)
 Vue.component(HeadCard.name, HeadCard)
@@ -25,9 +28,12 @@ Vue.component(HeadCard.name, HeadCard)
 // 请求
 window.ajax = ajax;
 
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
