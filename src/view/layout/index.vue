@@ -83,7 +83,7 @@
         }
     }
     .layout-header-bar{
-        background: #fff;
+        background: #fff!important;
         box-shadow: 0 1px 1px rgba(0,0,0,.1);
     }
     .layout-logo-left{

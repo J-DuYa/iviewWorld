@@ -8,10 +8,19 @@ import 'iView/dist/styles/iview.css'
 import ajax from '@/http/apis'
 
 import './theme.less';
+import './permission'
 import '@/assets/scss/main.scss'
+
+// 引入组件
+import TitleTip from '@/components/TitleTip'
+import HeadCard from '@/components/HeadCard'
 
 Vue.config.productionTip = false
 Vue.use(iView)
+
+// 全局组件
+Vue.component(TitleTip.name, TitleTip)
+Vue.component(HeadCard.name, HeadCard)
 
 // 请求
 window.ajax = ajax;
