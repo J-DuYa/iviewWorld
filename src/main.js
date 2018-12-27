@@ -4,6 +4,8 @@ import router from './router'
 
 // 引入iview
 import iView from 'iview'
+import Viewer from 'v-viewer'
+import VueCropper from 'vue-cropper'
 import 'iView/dist/styles/iview.css'
 import ajax from '@/http/apis'
 
@@ -17,6 +19,8 @@ import HeadCard from '@/components/HeadCard'
 
 Vue.config.productionTip = false
 Vue.use(iView)
+Vue.use(Viewer)
+Vue.use(VueCropper)
 
 // store
 import store from './store'
@@ -27,8 +31,6 @@ Vue.component(HeadCard.name, HeadCard)
 
 // 请求
 window.ajax = ajax;
-
-
 
 /* eslint-disable no-new */
 new Vue({
