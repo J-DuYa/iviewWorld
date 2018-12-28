@@ -9,7 +9,12 @@
             </Sider>
             <Layout>
                 <Header :style="{padding: 0}" class="layout-header-bar">
-                    <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
+                   <div class="flex-betwwen">
+                       <div>
+                           <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
+                           <span class="font14">测试</span>
+                       </div>
+                   </div>
                 </Header>
                 <!-- 标题   -->
                 <Page />
@@ -73,7 +78,6 @@
 
         }
     }
-
     .layout{
         background: #f5f7f9;
         position: relative;
@@ -140,5 +144,8 @@
             left: 0;
             right: 0;
         }
+    }
+    .btnGroup {
+        padding: 0 20px;
     }
 </style>

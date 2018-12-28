@@ -30,6 +30,10 @@ export default new Router({
                   path: '/github',
                   name: 'github',
                   component: () => import('@/view/Github')
+              }, { // 不同table
+                  path: '/commonTable',
+                  name: 'commonTable',
+                  component: () => import('@/view/Tables/CommonTable')
               }
 
           ]

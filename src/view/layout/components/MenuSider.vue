@@ -72,7 +72,7 @@
 
 <style lang="scss" scoped>
     .ivu-menu-submenu {
-        font-size: 12px;
+        font-size: 14px;
         .ivu-menu-submenu-title {
             i {
                 position: relative;
@@ -83,7 +83,8 @@
         .ivu-menu {
             i {
                 top: 2px!important;
-                font-size: 12px;
+                font-size: 13px;
+                color: #fff!important;
             }
             span {
                 /*font-size: 12px;*/
@@ -97,11 +98,14 @@
             text-align: center;
             a {
                 display: block;
-                padding: 5px 0;
+                padding: 8px 0;
             }
             i {
-                font-size: 22px;
+                font-size: 28px;
             }
         }
+    }
+    .menu-collapsed .ivu-dropdown i {
+        color: #fff!important;
     }
 </style>

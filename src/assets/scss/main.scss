@@ -28,6 +28,31 @@
   text-align: center;
 }
 
-.mt10 {
+.pt10 {
   padding-top: 10px;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+.pd10 {
+  padding: 0 10px;
+}
+
+.flex-betwwen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.th_page {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/** 字体区域 **/
+.font14 {
+  font-size: 15px;
 }
