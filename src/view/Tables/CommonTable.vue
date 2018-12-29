@@ -17,7 +17,9 @@
                 columns1: [
                     {
                         title: 'Name',
-                        key: 'name'
+                        key: 'name',
+                        minwidth: 100,
+                        fixed: 'left'
                     },
                     {
                         title: 'Age',
@@ -25,6 +27,8 @@
                     },
                     {
                         title: 'Address',
+                        fixed: 'right',
+                        minwidth: 180,
                         key: 'address'
                     }
                 ],

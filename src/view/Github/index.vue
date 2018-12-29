@@ -1,6 +1,8 @@
 <template>
     <div class="github">
-        <img :src="github" class="logo"/>
+        <viewer :images="headerImage ? headerImage.split(',') : []">
+            <img :src="headerImage" class="logo"/>
+        </viewer>
         <p class="duya">毒牙</p>
         <p class="address">
             <a href="https://github.com/TreeZou/thirdWorld-vue" target="_blank">https://github.com/TreeZou/thirdWorld-vue</a>
@@ -16,9 +18,12 @@
         name: "Github",
         data() {
             return {
-                github: github
+                headerImage: github
             }
-        }
+        },
+        // created() {
+        //   console.log(this.headerImage)
+        // }
     }
 </script>
 
