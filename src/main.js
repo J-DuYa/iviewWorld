@@ -21,7 +21,6 @@ Vue.config.productionTip = false
 Vue.use(iView)
 Vue.use(Viewer)
 Vue.use(VueCropper)
-
 // store
 import store from './store'
 

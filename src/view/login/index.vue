@@ -1,5 +1,6 @@
 <template>
     <div class="t_Login">
+        <canvas id="triangle-lost-in-space" resize="true"></canvas>
         <div class="t_login_form">
             <div class="login_title">第三方世界后台管理系统</div>
             <Form ref="loginInfo" :model="loginInfo" :label-width="60">
@@ -16,9 +17,9 @@
         </div>
     </div>
 </template>
-import t_background from '@/assets/images/login/background.jpg'
 
 <script>
+    import t_background from '@/assets/images/login/background.jpg'
     export default {
         name: "Login",
         data() {
@@ -53,7 +54,7 @@ import t_background from '@/assets/images/login/background.jpg'
         left: 0;
         right: 0;
         overflow: hidden;
-        background: url("./../../assets/images/login/background.jpg") no-repeat;
+        /*background: url("./../../assets/images/login/background.jpg") no-repeat;*/
         background-attachment: fixed;
         background-size: 100% 100%;
         .t_login_form {
