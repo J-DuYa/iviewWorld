@@ -12,10 +12,10 @@ import ajax from '@/http/apis'
 import './theme.less';
 import './permission'
 import '@/assets/scss/main.scss'
-
 // 引入组件
 import TitleTip from '@/components/TitleTip'
 import HeadCard from '@/components/HeadCard'
+import TableComponent from '@/components/Table'
 
 Vue.config.productionTip = false
 Vue.use(iView)
@@ -27,6 +27,7 @@ import store from './store'
 // 全局组件
 Vue.component(TitleTip.name, TitleTip)
 Vue.component(HeadCard.name, HeadCard)
+Vue.component(TableComponent.name, TableComponent)
 
 // 请求
 window.ajax = ajax;
