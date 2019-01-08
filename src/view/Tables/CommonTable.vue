@@ -7,7 +7,14 @@
                     :config.sync=config
             ></TableComponent>
             <div class="th_page mt20 pd10">
-                <Page :total="data1.length" show-elevator show-total />
+                <Page
+                    :total="data1.length"
+                    :page-size="pageSize"
+                    show-elevator
+                    show-sizer
+                    show-total
+                    @on-change="changePageNum"
+                    @on-page-size-change="changePageSize"/>
             </div>
         </Card>
     </div>
@@ -18,6 +25,7 @@
         name: "CommonTable",
         data() {
             return {
+                pageSize: 10,
                 columns1: [
                     {
                         title: '姓名',
@@ -123,6 +131,30 @@
                     age: 19,
                     address: '三年二班',
                     date: '2014.09.01'
+                },
+                {
+                    name: '王晓',
+                    age: 18,
+                    address: '三年二班',
+                    date: '2014.09.01'
+                },
+                {
+                    name: '王林刚',
+                    age: 18,
+                    address: '三年二班',
+                    date: '2014.09.01'
+                },
+                {
+                    name: '朱晓辉',
+                    age: 18,
+                    address: '三年二班',
+                    date: '2014.09.01'
+                },
+                {
+                    name: '金春阳',
+                    age: 19,
+                    address: '三年二班',
+                    date: '2014.09.01'
                 }
             ];
             this.data1 = [];
@@ -132,9 +164,15 @@
             });
             this.config.loading = false;
           },
+          changePageNum(num) {
+
+          },
+          changePageSize(pageSize) {
+
+          },
           init() {
             this.getData();
-          }
+          },
         },
         created() {
             this.getData()

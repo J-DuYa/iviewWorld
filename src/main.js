@@ -16,6 +16,7 @@ import '@/assets/scss/main.scss'
 import TitleTip from '@/components/TitleTip'
 import HeadCard from '@/components/HeadCard'
 import TableComponent from '@/components/Table'
+import PageComponent from '@/components/Page'
 
 Vue.config.productionTip = false
 Vue.use(iView)
@@ -28,6 +29,7 @@ import store from './store'
 Vue.component(TitleTip.name, TitleTip)
 Vue.component(HeadCard.name, HeadCard)
 Vue.component(TableComponent.name, TableComponent)
+Vue.component(PageComponent.name, PageComponent)
 
 // 请求
 window.ajax = ajax;
