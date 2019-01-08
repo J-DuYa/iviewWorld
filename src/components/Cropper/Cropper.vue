@@ -4,7 +4,8 @@
 
 <script>
     export default {
-        name: "Cropper"
+        name: "Cropper",
+        components: {}
     }
 </script>
 

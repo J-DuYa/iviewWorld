@@ -1,3 +1,9 @@
+/**
+* time: 2019/01/08 17:15
+* Editor: 毒牙
+* param: mod
+* desc: 门户js
+*/
 import Vue from 'vue'
 import App from './App'
 import router from './router'

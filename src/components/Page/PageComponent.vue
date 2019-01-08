@@ -1,19 +1,31 @@
 <template>
-    <!--<Page-->
-        <!--:total="data1.length"-->
-        <!--:page-size="pageSize"-->
-        <!--show-elevator-->
-        <!--show-sizer-->
-        <!--show-total-->
-        <!--@on-change="changePageNum"-->
-        <!--@on-page-size-change="changePageSize"/>-->
+    <Page
+        :total="pageTotal"
+        :page-size="pageSize"
+        show-elevator
+        show-sizer
+        show-total
+        @on-change="$emit('changePageNum')"
+        @on-page-size-change="$emit('changePageSize')"/>
 </template>
 
 <script>
     export default {
         name: "PageComponent",
         props: {
+            pageTotal: {
+                type: Number,
+                default: 0
+            },
+            pageSize: {
+                type: Number,
+                default: 10
+            }
+        },
+        data() {
+          return {
 
+          }
         },
         methods: {
 

@@ -7,14 +7,11 @@
                     :config.sync=config
             ></TableComponent>
             <div class="th_page mt20 pd10">
-                <Page
-                    :total="data1.length"
-                    :page-size="pageSize"
-                    show-elevator
-                    show-sizer
-                    show-total
-                    @on-change="changePageNum"
-                    @on-page-size-change="changePageSize"/>
+                <PageComponent
+                    :pageTotal.sync="data1.length"
+                    @changePageNum="changePageNum"
+                    @changePageSize="changePageSize"
+                />
             </div>
         </Card>
     </div>
