@@ -8,8 +8,11 @@ const Random = Mock.Random
 
 // 截取 ? 之后的内容
 const subParam = (param) => {
-    let paramObj = param ? param.url.replace(/(?<=\?).*/) : { ...param };
-    console.log(paramObj)
+    const pattern = /(\w+)=(\w+)/ig;
+    let paramObj = {}
+    param ? param.url.replace(pattern, (a, b, c) => {
+        paramObj[b] = c;
+    }) : {...param};
     return paramObj
 };
 
@@ -138,13 +141,11 @@ const MenuList = () => {
 
 // 模拟普通表格数据
 const getUserList = (param) => {
-    console.log(param)
     let params = subParam(param)
-    console.log(params)
     let data = {};
     let dataList = [];
     let page = {};
-    for(let index = 0; index < 10; index ++) {
+    for(let index = 0; index < params.pageSize; index ++) {
         dataList.push(Mock.mock({
             name: Random.cname(),
             // age: Random.number()
@@ -156,8 +157,8 @@ const getUserList = (param) => {
     page = Mock.mock({
         'total|1-10000': 10,
         totaPage: 1,
-        currentPage: 1,
-        pageSize: 10
+        currentPage: params.pageNum,
+        pageSize: params.pageSize
     })
     data = {
         ...page,
