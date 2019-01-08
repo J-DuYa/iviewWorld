@@ -1,7 +1,7 @@
 /*
- * @Author: 毒牙 
+ * @Author: 毒牙
  * @description 初步整理, 之后会优化请求
- * @Date: 2018-11-04 19:17:58 
+ * @Date: 2018-11-04 19:17:58
  * @Last Modified by: 毒牙
  * @Last Modified time: 2018-11-04 20:51:12
  */
@@ -21,6 +21,25 @@ let http = {
     }
 };
 
+/**
+* time: 2019/1/8 19:18
+* Editor: 毒牙
+* func: checkStatus
+* param: status 状态码
+* desc: check http status belongs to which type
+*/
+const checkStatus = (response) => {
+    const errorText = http.status[response.status];
+    Notice.error({
+        title: '错误代码：' + response.status,
+        desc: errorText
+    });
+    const error = new Error(errorText);
+    error.name = response.status;
+    error.response = response;
+    throw error;
+}
+
 export default {
     // 普通post请求
     post(url, param) {
@@ -30,8 +49,11 @@ export default {
                 url,
                 params: Qs.stringify(param)
             }).then((res) => {
-                if(res.status == '200') resolve(res.data)
-                reject(res)
+                if(res.status === 200) {
+                    resolve(res.data)
+                } else {
+                    checkStatus(res)
+                }
             }).catch((err) => {
                 throw new Error(err)
             })
@@ -45,8 +67,12 @@ export default {
                 url,
                 params: param,
             }).then(res => {
-                if(res.status == '200') resolve(res.data)
-                reject(res)
+                if(res.status === 200) {
+                    resolve(res.data)
+                } else {
+                    // 判断res.status是属于哪一种类型 慢慢完善
+                    checkStatus(res)
+                }
             }).catch((err) => {
                 throw new Error(err)
             })

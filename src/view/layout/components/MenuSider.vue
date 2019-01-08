@@ -56,16 +56,29 @@
         },
         data() {
             return {
-                routers: routers
+                routers: []
             }
         },
         methods: {
             selectMenu(name) {
                 console.log(name)
             },
+            getMenuList() {
+                ajax.get('/home/getMenuList').then(res => {
+                    console.log(res)
+                    if(res.success) {
+                        this.routers = res.result;
+                    }
+                }).catch(res => {
+
+                })
+            }
         },
         watch: {
 
+        },
+        created() {
+            this.getMenuList();
         }
     }
 </script>

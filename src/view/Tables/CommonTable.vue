@@ -8,7 +8,7 @@
             ></TableComponent>
             <div class="th_page mt20 pd10">
                 <PageComponent
-                    :pageTotal.sync="data1.length"
+                    :pageTotal.sync="pageTotal"
                     @changePageNum="changePageNum"
                     @changePageSize="changePageSize"
                 />
@@ -23,6 +23,8 @@
         data() {
             return {
                 pageSize: 10,
+                currentPage: 1,
+                pageTotal: null,
                 columns1: [
                     {
                         title: '姓名',
@@ -40,7 +42,13 @@
                         title: '班级',
                         align: 'center',
                         minwidth: 180,
-                        key: 'address'
+                        key: 'className',
+                        render:(h, params) => {
+                            return h('div', [
+                                h('p', {
+                                }, "三年" + params.row.className + "班"),
+                            ])
+                        }
                     },
                     {
                         title: '入学时间',
@@ -74,91 +82,32 @@
                         }
                     }
                 ],
-                data1: [
-
-                ],
+                data1: [],
                 config: {
                     stripe:true,
                     loading: false,
                     size: "small"
-                }
+                },
             }
         },
         methods: {
           getData() {
-            let data = [
-                {
-                    name: '毒牙君',
-                    age: 18,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                },
-                {
-                    name: 'Jay',
-                    age: 24,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                },
-                {
-                    name: 'Rose',
-                    age: 30,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                },
-                {
-                    name: '柠檬君',
-                    age: 26,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                },
-                {
-                    name: '张形意',
-                    age: 26,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                },
-                {
-                    name: '解加杰',
-                    age: 18,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                },
-                {
-                    name: 'Fbx',
-                    age: 19,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                },
-                {
-                    name: '王晓',
-                    age: 18,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                },
-                {
-                    name: '王林刚',
-                    age: 18,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                },
-                {
-                    name: '朱晓辉',
-                    age: 18,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                },
-                {
-                    name: '金春阳',
-                    age: 19,
-                    address: '三年二班',
-                    date: '2014.09.01'
-                }
-            ];
-            this.data1 = [];
+            let data = {
+                pageNum: this.currentPage,
+                pageSize: this.pageSize
+            };
             this.config.loading = true;
-            data.forEach(item => {
-                this.data1.push(item)
-            });
+              ajax.get('/user/getUserList', {
+                  ...data
+              }).then(res => {
+                  console.log(res)
+                  if(res.success) {
+                      this.data1 = res.result && res.result.dataList ? res.result.dataList : [];
+                      this.pageTotal = res.result && res.result.total ? res.result.total : 0
+              }
+              }).catch(res => {
+
+              })
             this.config.loading = false;
           },
           changePageNum(num) {

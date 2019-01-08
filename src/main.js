@@ -37,6 +37,9 @@ Vue.component(HeadCard.name, HeadCard)
 Vue.component(TableComponent.name, TableComponent)
 Vue.component(PageComponent.name, PageComponent)
 
+// 引入mockjs
+require('./mock/mock.js')
+
 // 请求
 window.ajax = ajax;
 
