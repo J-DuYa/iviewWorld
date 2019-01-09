@@ -25,11 +25,11 @@
                     class="mt20"
             ></TableComponent>
             <div class="th_page mt20 pd10">
-                <PageComponent
-                        :pageTotal.sync="pageTotal"
-                        @changePageNum="changePageNum"
-                        @changePageSize="changePageSize"
-                />
+                <!--<PageComponent-->
+                        <!--:pageTotal.sync="pageTotal"-->
+                        <!--@changePageNum="changePageNum"-->
+                        <!--@changePageSize="changePageSize"-->
+                <!--/>-->
             </div>
         </Card>
     </div>
@@ -125,15 +125,20 @@
               }
               }).catch(res => {
 
-              })
+              });
             this.config.loading = false;
           },
+
           changePageNum(num) {
-
+              this.currentPage = num;
+              this.getData();
           },
+
           changePageSize(pageSize) {
-
+              this.pageSize = num;
+              this.getData();
           },
+
           init() {
             this.getData();
           },
