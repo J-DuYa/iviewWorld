@@ -7,7 +7,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import VueI18n from 'vue-i18n'
+import Cookies from 'js-cookie'
 // 引入iview
 import iView from 'iview'
 import Viewer from 'v-viewer'
@@ -23,11 +24,13 @@ import TitleTip from '@/components/TitleTip'
 import HeadCard from '@/components/HeadCard'
 import TableComponent from '@/components/Table'
 import PageComponent from '@/components/Page'
-
+// 导入语言包
+import message from '@/lang'
 Vue.config.productionTip = false
 Vue.use(iView)
 Vue.use(Viewer)
 Vue.use(VueCropper)
+Vue.use(VueI18n)
 // store
 import store from './store'
 
@@ -39,6 +42,12 @@ Vue.component(PageComponent.name, PageComponent)
 
 // 引入mockjs
 require('./mock/mock.js')
+
+// 使用语言包
+const il8n = new VueI18n({
+    locale: Cookies.get('language') || 'en',
+    message
+})
 
 // 请求
 window.ajax = ajax;
