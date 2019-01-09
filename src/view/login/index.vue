@@ -3,16 +3,15 @@
         <!--<canvas id="triangle-lost-in-space" resize="true"></canvas>-->
         <neon-effect :options="options"></neon-effect>
         <div class="t_login_form">
-            <div class="login_title">第三方世界后台管理系统</div>
             <Form ref="loginInfo" :model="loginInfo" :label-width="60">
                 <FormItem label="账号：" prop="username">
-                    <Input type="text" v-model="loginInfo.username"></Input>
+                    <Input type="text" size="large" v-model="loginInfo.username"></Input>
                 </FormItem>
                 <FormItem label="密码：" prop="password">
-                    <Input type="password" v-model="loginInfo.password"></Input>
+                    <Input type="password" size="large" v-model="loginInfo.password"></Input>
                 </FormItem>
                 <FormItem>
-                    <Button type="primary" @click="loginSubmit()" long>登 录</Button>
+                    <Button type="primary" size="large" @click="loginSubmit()" long>登 录</Button>
                 </FormItem>
             </Form>
         </div>
@@ -50,7 +49,6 @@
                 ajax.post('/sso/login', {
                     ...this.loginInfo
                 }).then(res => {
-                    console.log(res)
                     if(res.success) {
                         this.$router.push({
                             name: 'index'
@@ -79,24 +77,20 @@
         background-attachment: fixed;
         background-size: 100% 100%;
         .t_login_form {
-            margin: 220px auto 0;
-            padding: 40px;
-            width: 330px;
+            margin: 15% auto 0;
+            width: 400px;
             height: auto;
-            background: #0f7eb3;
-            box-shadow: 0 0 1px 3px #ddd,0 0 3px 5px #f2f2f2;
             .login_title {
-                margin-bottom: 10px;
-                width: 100%;
-                height: 60px;
-                line-height: 60px;
-                font-size: 18px;
-                font-weight: bold;
-                letter-spacing: 1.5px;
-                color: #fff;
+
             }
             .ivu-form .ivu-form-item-label {
                 color: #fff;
+            }
+            .ivu-input-large, .ivu-btn {
+                width: 240px;
+            }
+            .ivu-input-large {
+                padding: 15px 10px;
             }
         }
     }

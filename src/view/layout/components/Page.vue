@@ -1,14 +1,34 @@
 <template>
-    <Content :style="{margin: '20px', background: '#fff', minHeight: '260px'}">
-        <keep-alive>
-            <router-view/>
-        </keep-alive>
+    <Content :style="{margin: '20px', background: '#fff', minHeight: '260px'}" id="th_content" class="text">
+        <Scroll
+                :height="screemHeight"
+        >
+            <keep-alive>
+                <router-view/>
+            </keep-alive>
+        </Scroll>
     </Content>
 </template>
 
 <script>
     export default {
-        name: "Page"
+        name: "Page",
+        data() {
+            return {
+                screemHeight: null
+            }
+        },
+        mounted: function() {
+
+        },
+        watch: {
+            screemHeight() {
+                this.screemHeight = document.getElementById('th_content') ? document.getElementById('th_content').clientHeight : 1000
+            }
+        },
+        created() {
+            this.screemHeight = document.getElementById('th_content') ? document.getElementById('th_content').clientHeight : 1000
+        }
     }
 </script>
 

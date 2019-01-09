@@ -1,16 +1,34 @@
 <template>
     <div class="">
         <Card class="tableCard" :dis-hover="true">
+            <TitleTip title="基础表格"></TitleTip>
             <TableComponent
                     :columns.sync="columns1"
                     :data.sync="data1"
                     :config.sync=config
+                    class="mt20"
             ></TableComponent>
             <div class="th_page mt20 pd10">
                 <PageComponent
                     :pageTotal.sync="pageTotal"
                     @changePageNum="changePageNum"
                     @changePageSize="changePageSize"
+                />
+            </div>
+        </Card>
+        <Card class="tableCard" :dis-hover="true">
+            <TitleTip title="复杂表格"></TitleTip>
+            <TableComponent
+                    :columns.sync="columns1"
+                    :data.sync="data1"
+                    :config.sync=config
+                    class="mt20"
+            ></TableComponent>
+            <div class="th_page mt20 pd10">
+                <PageComponent
+                        :pageTotal.sync="pageTotal"
+                        @changePageNum="changePageNum"
+                        @changePageSize="changePageSize"
                 />
             </div>
         </Card>
