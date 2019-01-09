@@ -1,6 +1,7 @@
 <template>
-    <div class="th_home homeBg" :style="backgroundObj">
-        <p class="text-center th_home_title">第三方世界</p>
+    <div class="th_home homeBg">
+        <bubbles-effect :options="options"></bubbles-effect>
+        <p class="text-center th_home_title" style="z-index: 9999">第三方世界</p>
     </div>
 </template>
 
@@ -10,8 +11,11 @@
         name: "Home",
         data() {
             return {
-                backgroundObj: {
-                    backgroundImage: 'url(' + background + ')'
+                options: {
+                    color: '#5F9EA0', //气泡颜色
+                    radius: 15, //气泡半径
+                    densety: 0.3, // 气泡密度 越大越密集(建议不要大于1)
+                    clearOffset: 0.2 // 气泡消失距离[0-1] 越大越晚消失
                 }
             }
         }

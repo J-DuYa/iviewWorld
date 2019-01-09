@@ -9,7 +9,7 @@ import App from './App'
 import router from './router'
 import VueI18n from 'vue-i18n'
 import Cookies from 'js-cookie'
-import { neon } from 'vue-canvas-effect';
+import { neon, bubbles } from 'vue-canvas-effect';
 
 // 引入iview
 import iView from 'iview'
@@ -41,6 +41,7 @@ import store from './store'
 
 // 全局组件
 Vue.component(neon.name, neon);
+Vue.component(bubbles.name, bubbles);
 Vue.component(TitleTip.name, TitleTip)
 Vue.component(HeadCard.name, HeadCard)
 Vue.component(TableComponent.name, TableComponent)
