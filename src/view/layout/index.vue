@@ -9,10 +9,14 @@
             </Sider>
             <Layout>
                 <Header :style="{padding: 0}" class="layout-header-bar">
-                   <div class="flex-betwwen">
+                   <div class="flex-betwwen pd10">
                        <div>
                            <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
                            <span class="font14">测试</span>
+                       </div>
+                       <!-- 用户头像 -->
+                       <div>
+                           <Avatar :src="github" />
                        </div>
                    </div>
                 </Header>

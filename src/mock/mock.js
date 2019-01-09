@@ -18,10 +18,13 @@ const subParam = (param) => {
 
 // 模拟登录
 const getLoginUser = (params) => {
+    params = subParam(params)
     // 模拟返回值
     let result = {
 
     };
+    // 是否查到 账号
+    let isShowAccount = false;
     // 判断当前用户是否等于数据库中的数据
     const db = [
         {
@@ -40,6 +43,13 @@ const getLoginUser = (params) => {
     ];
     // 从db中查询账户信息
     db.forEach(item => {
+        if(isShowAccount) {
+            return result;
+        }
+        if(item.account === params.username) {
+            isShowAccount = true;
+        }
+
         item.account === params.username ? item.password === params.password ? result = {
             code: '200',
             success: true,

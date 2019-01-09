@@ -9,14 +9,14 @@ export default new Router({
   mode: 'history',
   routes: [
       { // 登录
-        path: '/login',
+        path: '/',
         name: 'login',
         component: Login
       }, { // home页面
-          path: '/',
+          path: '/index',
           name: 'index',
           component: TLayout,
-          redirect: 'github',
+          redirect: 'home',
           children: [
               { // 主页
                   path: '/home',

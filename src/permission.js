@@ -12,6 +12,10 @@ Router.beforeEach((to, from, next) => {
     NProgress.start()
     console.log(to);
     console.log(from);
+    if(!to.name) {
+        next({ path: '/' })
+    }
+
     if(to.name === 'login') {
         console.log("进入登录页面, 清空所有关联数据");
     }

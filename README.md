@@ -9,18 +9,19 @@
 
 1、 添加依赖
 npm install
-### 架构
-vue  
-ES6  
-vue-i18n  
-mockJs  
-axios  
-nprogress  
-paper  
-vuex  
-vue-router  
-iview  
-js-cookie
+### 整体架构
+- vue  
+- ES6  
+- vue-i18n  
+- mockJs  
+- axios  
+- nprogress  
+- paper  
+- vuex  
+- vue-router  
+- iview  
+- js-cookie  
+- vue-canvas-effect
 
 2、 服务默认启动在 localhost:8080(可以在/config/index.js中修改端口号)
 npm run dev
