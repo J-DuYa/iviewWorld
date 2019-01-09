@@ -43,11 +43,12 @@ const checkStatus = (response) => {
 export default {
     // 普通post请求
     post(url, param) {
+        console.log(param)
         return new Promise((resolve, reject) => {
             axios({
                 method: 'post',
                 url,
-                params: Qs.stringify(param)
+                params: param
             }).then((res) => {
                 if(res.status === 200) {
                     resolve(res.data)

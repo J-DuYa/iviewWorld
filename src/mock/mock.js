@@ -16,6 +16,54 @@ const subParam = (param) => {
     return paramObj
 };
 
+// 模拟登录
+const getLoginUser = (params) => {
+    // 模拟返回值
+    let result = {
+
+    };
+    // 判断当前用户是否等于数据库中的数据
+    const db = [
+        {
+            userId: 1,
+            username: 'Duya',
+            account: 'admin',
+            password: '123456',
+            userType: 0
+        }, {
+            userId: 2,
+            username: '毒牙君',
+            account: '20142344098',
+            password: '123456',
+            userType: 1
+        }
+    ];
+    // 从db中查询账户信息
+    db.forEach(item => {
+        item.account === params.username ? item.password === params.password ? result = {
+            code: '200',
+            success: true,
+            msg: '请求成功',
+            result: {
+                userId: item.userId,
+                username: item.username,
+                userType: item.userType
+            }
+        } : result = {
+            code: '500',
+            success: false,
+            msg: '密码错误',
+            result: null
+        } : result = {
+            code: '500',
+            success: false,
+            msg: '账号有误',
+            result: null
+        };
+    });
+    return result;
+};
+
 // 菜单list
 const MenuList = () => {
     return {
@@ -141,7 +189,7 @@ const MenuList = () => {
 
 // 模拟普通表格数据
 const getUserList = (param) => {
-    let params = subParam(param)
+    let params = subParam(param);
     let data = {};
     let dataList = [];
     let page = {};
@@ -159,19 +207,24 @@ const getUserList = (param) => {
         totaPage: 1,
         currentPage: params.pageNum,
         pageSize: params.pageSize
-    })
+    });
     data = {
         ...page,
         dataList: dataList
-    }
+    };
     return {
         code: "200",
         success: true,
         msg: '请求成功',
         result: data
     }
-}
+};
 
+
+// 登录接口
+Mock.mock(RegExp('/sso/login' + '*'), 'post', (options) => {
+    return getLoginUser(options)
+});
 // 菜单接口
 Mock.mock('/home/getMenuList', 'get', MenuList);
 // 用户列表接口

@@ -34,10 +34,17 @@
             // 登录
             loginSubmit() {
                 // 测试跳转页面的方法
-                console.log('触发');
-                this.$router.push({
-                    name: 'index'
-                });
+                ajax.post('/sso/login', {
+                    ...this.loginInfo
+                }).then(res => {
+                    if(res.success) {
+                        this.$router.push({
+                            name: 'index'
+                        });
+                    }
+                }).catch(err => {
+                    throw new Error(err)
+                })
             }
         },
         created() {
