@@ -81,20 +81,28 @@ const MenuList = () => {
         success: true,
         msg: '请求成功',
         result: [
-            {
-                id: '9999',
-                parentsId: ['9999'],
-                menuUrl: 'github',
-                title: 'github',
-                icon: 'logo-github',
-                hasChild: false
-            }, {
+           {
                 id: '10000',
                 parentsId: ['10000'],
                 menuUrl: 'home',
                 title: '首页',
                 icon: 'ios-cafe-outline',
                 hasChild: false
+            },   {
+                id: '1000',
+                parentsId: ['1001'],
+                menuUrl: '',
+                title: '控制台',
+                icon: 'ios-easel',
+                hasChild: true,
+                child: [{
+                    id: '1002',
+                    menuUrl: 'commonTable',
+                    title: 'dashbroad',
+                    icon: 'ios-speedometer-outline',
+                    hasChild: false,
+                    parentId: '1001'
+                }]
             }, {
                 id: '10001',
                 parentsId: ['10001'],
@@ -177,21 +185,14 @@ const MenuList = () => {
                     hasChild: false,
                     parentId: '101'
                 }]
-            },  {
-                id: '1000',
-                parentsId: ['1001'],
-                menuUrl: '',
-                title: '控制台',
-                icon: 'ios-easel',
-                hasChild: true,
-                child: [{
-                    id: '1002',
-                    menuUrl: 'commonTable',
-                    title: 'dashbroad',
-                    icon: 'ios-speedometer-outline',
-                    hasChild: false,
-                    parentId: '1001'
-                }]
+            },
+            {
+                id: '9999',
+                parentsId: ['9999'],
+                menuUrl: 'github',
+                title: 'github',
+                icon: 'logo-github',
+                hasChild: false
             }
         ]
     }

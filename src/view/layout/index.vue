@@ -17,6 +17,17 @@
                        <!-- 用户头像 -->
                        <div>
                            <Avatar :src="github" />
+                           &nbsp;
+                           <Dropdown placement="bottom-start" @on-click="chooseDrop">
+                               <a href="javascript:void(0)">
+                                   <Icon type="ios-arrow-down"></Icon>
+                               </a>
+                               <DropdownMenu slot="list">
+                                   <DropdownItem name="basicInfo">个人信息</DropdownItem>
+                                   <DropdownItem name="signout">退出</DropdownItem>
+                               </DropdownMenu>
+                           </Dropdown>
+                           &nbsp;
                        </div>
                    </div>
                 </Header>
@@ -45,7 +56,25 @@
             collapsedSider () {
                 this.$refs['sideRoute'].toggleCollapse();
             },
-            // 循环遍历路由
+
+            chooseDrop(name) {
+                console.log(name)
+                switch (name) {
+                    case 'basicInfo':
+                        this.$router.push({
+                            name: 'basicInfo'
+                        });
+                        break;
+                    case 'signout':
+                        this.$router.push({
+                            name: 'login'
+                        });
+                        break;
+                    default:
+                        break;
+
+                }
+            }
         },
         computed: {
             rotateIcon () {

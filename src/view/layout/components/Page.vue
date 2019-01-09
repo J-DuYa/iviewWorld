@@ -1,8 +1,7 @@
 <template>
     <Content :style="{margin: '20px', background: '#fff', minHeight: '260px'}" id="th_content" class="text">
         <Scroll
-                :height="screemHeight"
-        >
+            :height="screemHeight">
             <keep-alive>
                 <router-view/>
             </keep-alive>
@@ -27,6 +26,7 @@
             }
         },
         created() {
+            // 相当于一个跳槽，用来给watch进行监听
             this.screemHeight = document.getElementById('th_content') ? document.getElementById('th_content').clientHeight : 1000
         }
     }
