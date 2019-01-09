@@ -2,8 +2,8 @@
     <Page
         :total="pageTotal"
         :page-size="pageSize"
-        show-elevator
-        show-sizer
+        :show-elevator="config.showElevator"
+        :show-sizer="config.showSizer"
         show-total
         @on-change="$emit('changePageNum')"
         @on-page-size-change="$emit('changePageSize')"/>
@@ -20,6 +20,12 @@
             pageSize: {
                 type: Number,
                 default: 10
+            },
+            config: {
+                type: Object,
+                default: () => {
+
+                }
             }
         },
         data() {

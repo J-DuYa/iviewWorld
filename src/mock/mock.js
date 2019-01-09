@@ -201,9 +201,11 @@ const MenuList = () => {
 // 模拟普通表格数据
 const getUserList = (param) => {
     let params = subParam(param);
+    console.log(params)
     let data = {};
     let dataList = [];
     let page = {};
+    console.log(params.pageSize)
     for(let index = 0; index < params.pageSize; index ++) {
         dataList.push(Mock.mock({
             name: Random.cname(),
