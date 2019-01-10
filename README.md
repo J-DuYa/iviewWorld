@@ -24,6 +24,7 @@ npm install
 - js-cookie  
 - vue-canvas-effect  
 - vue-echarts
+- VCharts
 
 2、 服务默认启动在 localhost:8080(可以在/config/index.js中修改端口号)
 npm run dev

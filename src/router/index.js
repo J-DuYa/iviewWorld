@@ -34,6 +34,14 @@ export default new Router({
                   path: '/commonTable',
                   name: 'commonTable',
                   component: () => import('@/view/Tables/CommonTable')
+              }, { // 仪表仪
+                  path: '/dashbroad',
+                  name: 'dashbroad',
+                  component: () => import('@/view/Charts/Dashbroad')
+              }, { // 控制台
+                  path: '/console',
+                  name: 'console',
+                  component: () => import('@/view/Charts/Console')
               }
 
           ]

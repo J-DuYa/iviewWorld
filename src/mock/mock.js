@@ -97,7 +97,14 @@ const MenuList = () => {
                 hasChild: true,
                 child: [{
                     id: '1002',
-                    menuUrl: 'commonTable',
+                    menuUrl: 'console',
+                    title: '控制台',
+                    icon: 'ios-speedometer-outline',
+                    hasChild: false,
+                    parentId: '1001'
+                }, {
+                    id: '1003',
+                    menuUrl: 'dashbroad',
                     title: 'dashbroad',
                     icon: 'ios-speedometer-outline',
                     hasChild: false,

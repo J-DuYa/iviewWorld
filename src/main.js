@@ -10,10 +10,7 @@ import router from './router'
 import VueI18n from 'vue-i18n'
 import Cookies from 'js-cookie'
 import { neon, bubbles } from 'vue-canvas-effect';
-import ECharts from 'vue-echarts/components/ECharts'
-
-import 'echarts/lib/chart/bar'
-import 'echarts/lib/component/tooltip'
+import VCharts from 'v-charts'
 
 // 引入iview
 import iView from 'iview'
@@ -39,12 +36,11 @@ Vue.use(iView)
 Vue.use(Viewer)
 Vue.use(VueCropper)
 Vue.use(VueI18n)
-
+Vue.use(VCharts)
 // store
 import store from './store'
 
 // 全局组件
-Vue.component('v-chart', ECharts)
 Vue.component(neon.name, neon);
 Vue.component(bubbles.name, bubbles);
 Vue.component(TitleTip.name, TitleTip)
