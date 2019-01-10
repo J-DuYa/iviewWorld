@@ -44,8 +44,8 @@ npm run dev
  </p>
  
  <p>
-   <img width="450" src="https://treezou.github.io/thirdWorld-vue/src/assets/images/program/home.png">
-   <img width="450" src="https://treezou.github.io/thirdWorld-vue/src/assets/images/program/dashbroad.png">
+   <img width="400" src="https://treezou.github.io/thirdWorld-vue/src/assets/images/program/home.png">
+   <img width="400" src="https://treezou.github.io/thirdWorld-vue/src/assets/images/program/dashbroad.png">
  </p>
 
 ### 那河畔中的金柳，是夕阳中的新娘；波光里的艳影，在我心头荡漾。-- 徐志摩《再别康桥》
