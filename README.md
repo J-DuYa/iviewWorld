@@ -22,7 +22,8 @@ npm install
 - vue-router  
 - iview  
 - js-cookie  
-- vue-canvas-effect
+- vue-canvas-effect  
+- vue-echarts
 
 2、 服务默认启动在 localhost:8080(可以在/config/index.js中修改端口号)
 npm run dev
@@ -37,6 +38,9 @@ npm run dev
 > 理想：第三方世界，让世界更美好！  
 
 项目图片：
+ <p align="center">
+  <img width="900" src="https://github.com/TreeZou/thirdWorld-vue/tree/master/src/assets/images/program/login.png">
+</p>
 
 
 ### 那河畔中的金柳，是夕阳中的新娘；波光里的艳影，在我心头荡漾。-- 徐志摩《再别康桥》
