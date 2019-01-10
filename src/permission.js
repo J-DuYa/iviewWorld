@@ -2,6 +2,7 @@ import Router from './router'
 import routers from '@/components/MenuRouter'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css'// progress bar style
+import store from '@/store'
 
 // 进入页面之前
 function permission() {
@@ -22,11 +23,11 @@ Router.beforeEach((to, from, next) => {
     routers && routers.map((item, index) => {
         if( item.hasChild ) {
             item.child && item.child.map((child, childIndex) => {
-                if( child.menuUrl === to.name ) console.log(child.title)
+                if( child.menuUrl === to.name ) store.dispatch('changeHeadTitle', child.title)
             })
         } else {
             if(item.menuUrl === to.name) {
-                console.log(item.title)
+                store.dispatch('changeHeadTitle', item.title)
             }
         }
     })
