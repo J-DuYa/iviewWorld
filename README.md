@@ -42,6 +42,7 @@ npm run dev
  <p align="center">
   <img width="900" src="https://treezou.github.io/thirdWorld-vue/src/assets/images/program/login.png">
  </p>
+ 
  <p>
    <img width="400" src="https://treezou.github.io/thirdWorld-vue/src/assets/images/program/home.png">
    <img width="400" src="https://treezou.github.io/thirdWorld-vue/src/assets/images/program/dashbroad.png">
