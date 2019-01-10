@@ -202,7 +202,7 @@ const MenuList = () => {
                 hasChild: true,
                 child: [{
                     id: '100002',
-                    menuUrl: '',
+                    menuUrl: 'palette',
                     title: '主题换色',
                     icon: 'ios-outlet',
                     hasChild: false,

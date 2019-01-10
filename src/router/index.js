@@ -42,6 +42,10 @@ export default new Router({
                   path: '/console',
                   name: 'console',
                   component: () => import('@/view/Charts/Console')
+              }, { // 调色板
+                  path: '/palette',
+                  name: 'palette',
+                  component: () => import('@/view/Palette')
               }
 
           ]

@@ -6,6 +6,9 @@
 */
 import Vue from 'vue'
 import App from './App'
+
+import 'normalize.css/normalize.css' // A modern alternative to CSS resets
+
 import router from './router'
 import VueI18n from 'vue-i18n'
 import Cookies from 'js-cookie'

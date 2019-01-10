@@ -1,7 +1,7 @@
 <template>
     <div class="layout">
         <Layout>
-            <Sider ref="sideRoute" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed" class="menuSider">
+            <Sider ref="sideRoute" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed" class="menuSider" v-show="!isCollapsed">
                 <div class="headerImg">
                     <img :src="github"/>
                 </div>
@@ -13,9 +13,12 @@
                        <div>
                            <Icon @click.native="collapsedSider" :class="rotateIcon" :style="{margin: '0 20px'}" type="md-menu" size="24"></Icon>
                            <span class="font14">{{title.title}}</span>
+                           &nbsp;&nbsp;&nbsp;&nbsp;
+                           <ColorPicker v-model="themeBg" alpha v-show="!isCollapsed" @on-change="changeThemeColor"/>
                        </div>
                        <!-- 用户头像 -->
-                       <div>
+                       <div v-show="!isCollapsed">
+                           <i id="th_theme">&nbsp;</i>
                            <Avatar :src="github" />
                            &nbsp;
                            <Dropdown placement="bottom-start" @on-click="chooseDrop">
@@ -27,7 +30,7 @@
                                    <DropdownItem name="signout">退出</DropdownItem>
                                </DropdownMenu>
                            </Dropdown>
-                           &nbsp;
+                           &nbsp;&nbsp;
                        </div>
                    </div>
                 </Header>
@@ -42,18 +45,24 @@
     import github from '@/assets/images/github/github.jpg'
     import MenuSider from './components/MenuSider'
     import Page from './components/Page'
-
     export default {
         name: "TLayout",
         components: { MenuSider, Page },
         data() {
             return {
+                themeBg: 'rgba(25, 190,107, .5)',
                 isCollapsed: false,
                 github: github,
                 title: this.$store.getters.headTitle
             }
         },
         methods: {
+            // 得到取色器的颜色
+            changeThemeColor(theme) {
+                console.log(theme)
+                // 想到一个投机取巧的方法 !-- （sorry）
+                this.$store.dispatch('changeThemeColor', theme)
+            },
             collapsedSider () {
                 this.$refs['sideRoute'].toggleCollapse();
             },

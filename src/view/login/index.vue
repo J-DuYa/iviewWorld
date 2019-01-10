@@ -19,7 +19,6 @@
 </template>
 
 <script>
-    import t_background from '@/assets/images/login/background.jpg'
     export default {
         name: "Login",
         data() {

@@ -1,6 +1,6 @@
 <template>
     <div class="menuClass">
-        <Menu :active-name="routers.length != 0 ? routers[0].id : ''" theme="dark" width="auto" :class="menuitemClasses" @on-select="selectMenu" v-if="!isCollapsed" accordion>
+        <Menu :active-name="routers.length != 0 ? routers[0].id : ''" theme="dark" width="auto" :class="menuitemClasses" @on-select="selectMenu" accordion>
             <template v-for="(route, index) in routers">
                 <template v-if="route.hasChild">
                    <Submenu :name="index">
@@ -28,15 +28,6 @@
                 </template>
             </template>
         </Menu>
-        <div class="menu-collapsed" v-else>
-            <template v-for="(route, index) in routers">
-                <Dropdown>
-                    <a href="javascript:void(0)">
-                        <Icon :type="route.icon" />
-                    </a>
-                </Dropdown>
-            </template>
-        </div>
     </div>
 </template>
 

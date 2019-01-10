@@ -17,6 +17,7 @@
     "axios": "^0.18.0",
     "iview": "^3.1.4",
     "js-cookie": "^2.2.0",
+    "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "paper": "^0.12.0",
     "v-charts": "^1.19.0",
