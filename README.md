@@ -39,7 +39,7 @@ npm run dev
 
 项目图片：
  <p align="center">
-  <img width="900" src="https://github.com/TreeZou/thirdWorld-vue/tree/master/src/assets/images/program/login.png">
+  <img width="900" src="https://treezou.github.io/thirdWorld-vue/src/assets/images/program/login.png">
 </p>
 
 
