@@ -1,19 +1,34 @@
 /*This is a place that some routers*/
 const routers = [
     {
-        id: '9999',
-        parentsId: ['9999'],
-        menuUrl: 'github',
-        title: 'github',
-        icon: 'logo-github',
-        hasChild: false
-    }, {
         id: '10000',
         parentsId: ['10000'],
         menuUrl: 'home',
         title: '首页',
         icon: 'ios-cafe-outline',
         hasChild: false
+    },   {
+        id: '1000',
+        parentsId: ['1001'],
+        menuUrl: '',
+        title: '控制台',
+        icon: 'ios-easel',
+        hasChild: true,
+        child: [{
+            id: '1002',
+            menuUrl: 'console',
+            title: '控制台',
+            icon: 'ios-speedometer-outline',
+            hasChild: false,
+            parentId: '1001'
+        }, {
+            id: '1003',
+            menuUrl: 'dashbroad',
+            title: 'dashbroad',
+            icon: 'ios-speedometer-outline',
+            hasChild: false,
+            parentId: '1001'
+        }]
     }, {
         id: '10001',
         parentsId: ['10001'],
@@ -96,21 +111,30 @@ const routers = [
             hasChild: false,
             parentId: '101'
         }]
-    },  {
-        id: '1000',
-        parentsId: ['1001'],
+    },
+    {
+        id: '100000',
+        parentsId: ['100001'],
         menuUrl: '',
-        title: '控制台',
-        icon: 'ios-easel',
+        title: '调色板',
+        icon: 'logo-rss',
         hasChild: true,
         child: [{
-            id: '1002',
-            menuUrl: 'commonTable',
-            title: 'dashbroad',
-            icon: 'ios-speedometer-outline',
+            id: '100002',
+            menuUrl: '',
+            title: '主题换色',
+            icon: 'ios-outlet',
             hasChild: false,
-            parentId: '1001'
+            parentId: '100001'
         }]
+    },
+    {
+        id: '9999',
+        parentsId: ['9999'],
+        menuUrl: 'github',
+        title: 'github',
+        icon: 'logo-github',
+        hasChild: false
     }
 ];
 export default routers;

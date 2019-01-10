@@ -194,6 +194,22 @@ const MenuList = () => {
                 }]
             },
             {
+                id: '100000',
+                parentsId: ['100001'],
+                menuUrl: '',
+                title: '调色板',
+                icon: 'logo-rss',
+                hasChild: true,
+                child: [{
+                    id: '100002',
+                    menuUrl: '',
+                    title: '主题换色',
+                    icon: 'ios-outlet',
+                    hasChild: false,
+                    parentId: '100001'
+                }]
+            },
+            {
                 id: '9999',
                 parentsId: ['9999'],
                 menuUrl: 'github',
@@ -208,11 +224,9 @@ const MenuList = () => {
 // 模拟普通表格数据
 const getUserList = (param) => {
     let params = subParam(param);
-    console.log(params)
     let data = {};
     let dataList = [];
     let page = {};
-    console.log(params.pageSize)
     for(let index = 0; index < params.pageSize; index ++) {
         dataList.push(Mock.mock({
             name: Random.cname(),

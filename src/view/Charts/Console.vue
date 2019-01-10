@@ -1,15 +1,15 @@
 <template>
     <div>
         <Row>
-            <Col :xs="24" :sm="24" :md="{ span: 7, offset: 1 }" :lg="{ span: 7, offset: 1 }">
+            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
                 <TitleTip title="访问状态"></TitleTip>
                 <ve-bar :data="chartData"></ve-bar>
             </Col>
-            <Col :xs="24" :sm="24" :md="{ span: 7, offset: 1 }" :lg="{ span: 7, offset: 1 }">
+            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
                 <TitleTip title="城市状态"></TitleTip>
                 <ve-liquidfill :data="waterPoloData"></ve-liquidfill>
             </Col>
-            <Col :xs="24" :sm="24" :md="{ span: 7, offset: 1 }" :lg="{ span: 7, offset: 1 }">
+            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
                 <TitleTip title="乱词八糟"></TitleTip>
                 <ve-wordcloud :data="wordData" :settings="wordSetting"></ve-wordcloud>
             </Col>
