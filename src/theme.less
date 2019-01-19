@@ -1,9 +1,30 @@
 @import '~iview/src/styles/index.less';
-//@basicColor: `document.getElementById('th_theme')`;
+@import './components/MessageAlert/index.less';
+
 @white: #fff;
+@primary-color: rgba(121, 205, 205, .5);
+@info-color             : #458B74;
+@success-color          : #19be6b;
+@processing-color       : @primary-color;
+@warning-color          : #ff9900;
+@error-color            : #ed4014;
+@normal-color           : #e6ebf1;
+@link-color             : #2D8cF0;
+@link-hover-color       : tint(@link-color, 20%);
+@link-active-color      : shade(@link-color, 5%);
+@selected-color         : fade(@primary-color, 90%);
+@tooltip-color          : #fff;
+@subsidiary-color       : #808695;
+@rate-star-color        : #CD7054;
 
 // 标题 设置
 .th_title {
   background: @primary-color;
   color: @white;
 }
+
+.th_world-b-r-4 {
+  border-radius: 4px;
+}
+
+

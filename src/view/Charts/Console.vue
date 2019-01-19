@@ -2,36 +2,22 @@
     <div>
         <Row>
             <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
-                <TitleTip title="访问状态"></TitleTip>
-                <ve-bar :data="chartData"></ve-bar>
-            </Col>
-            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
-                <TitleTip title="城市状态"></TitleTip>
-                <ve-liquidfill :data="waterPoloData"></ve-liquidfill>
-            </Col>
-            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
-                <TitleTip title="乱词八糟"></TitleTip>
+                <MessageAlert
+                        class="mt20"
+                        :isHasInfoIcon="true"
+                        tipMessage="这是一个描述个人兴趣的字词图">
+                    乱词八糟
+                </MessageAlert>
                 <ve-wordcloud :data="wordData" :settings="wordSetting"></ve-wordcloud>
             </Col>
             <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
-                <TitleTip title="散点图"></TitleTip>
-                <ve-scatter :data="chartData"></ve-scatter>
-            </Col>
-            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
-                <TitleTip title="双维度散点图"></TitleTip>
-                <ve-scatter :data="scatterData"></ve-scatter>
-            </Col>
-            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
-                <TitleTip title="瀑布图"></TitleTip>
-                <ve-waterfall :data="puData" :settings="puSettings"></ve-waterfall>
-            </Col>
-            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
-                <TitleTip title="k线图"></TitleTip>
+                <MessageAlert
+                        class="mt20"
+                        :isHasInfoIcon="true"
+                        tipMessage="这是一个k线图">
+                    k线图
+                </MessageAlert>
                 <ve-candle :data="kData"></ve-candle>
-            </Col>
-            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
-                <TitleTip title="玫瑰图"></TitleTip>
-                <ve-ring :data="ringData" :settings="ringSettings"></ve-ring>
             </Col>
         </Row>
     </div>
@@ -149,27 +135,10 @@
     export default {
         name: "Console",
         data() {
-            this.puSettings = {
-                dataType: 'percent'
-            };
             this.wordSetting = {
                 shape: 'diamond'
             };
-            this.ringSettings = {
-                roseType: 'radius'
-            };
             return {
-                ringData: {
-                    columns: ['语言', '访问用户'],
-                    rows: [
-                        { '语言': 'javascript', '访问用户': 1393 },
-                        { '语言': 'java', '访问用户': 3530 },
-                        { '语言': 'python', '访问用户': 2923 },
-                        { '语言': 'c', '访问用户': 1723 },
-                        { '语言': 'c++', '访问用户': 3792 },
-                        { '语言': 'php', '访问用户': 4593 }
-                    ]
-                },
                 kData: {
                     columns: ['日期', 'open', 'close', 'lowest', 'highest', 'vol'],
                     rows: [
@@ -212,61 +181,6 @@
                         { '日期': '2004-02-26', open: 10598.14, close: 10580.14, lowest: 10493.71, highest: 10652.96, vol: 223230000 },
                         { '日期': '2004-02-27', open: 10581.55, close: 10583.92, lowest: 10519.03, highest: 10689.55, vol: 200050000 }
                     ]
-                },
-                puData: {
-                    columns: ['活动', '时间'],
-                    rows: [
-                        { '活动': '吃饭', '时间': 0.1 },
-                        { '活动': '睡觉', '时间': 0.2 },
-                        { '活动': '打豆豆', '时间': 0.3 }
-                    ]
-                },
-                scatterData: {
-                    columns: ['日期', '访问用户', '下单用户', '年龄'],
-                    rows: {
-                        '上海': [
-                            { '日期': '1/1', '访问用户': 123, '年龄': 3, '下单用户': 1244 },
-                            { '日期': '1/2', '访问用户': 1223, '年龄': 6, '下单用户': 2344 },
-                            { '日期': '1/3', '访问用户': 7123, '年龄': 9, '下单用户': 3245 },
-                            { '日期': '1/4', '访问用户': 4123, '年龄': 12, '下单用户': 4355 },
-                            { '日期': '1/5', '访问用户': 3123, '年龄': 15, '下单用户': 4564 },
-                            { '日期': '1/6', '访问用户': 2323, '年龄': 20, '下单用户': 6537 }
-                        ],
-                        '北京': [
-                            { '日期': '1/1', '访问用户': 123, '年龄': 3, '下单用户': 1244 },
-                            { '日期': '1/2', '访问用户': 1273, '年龄': 6, '下单用户': 2344 },
-                            { '日期': '1/3', '访问用户': 3123, '年龄': 15, '下单用户': 4564 },
-                            { '日期': '1/4', '访问用户': 2123, '年龄': 9, '下单用户': 3245 },
-                            { '日期': '1/5', '访问用户': 4103, '年龄': 12, '下单用户': 4355 },
-                            { '日期': '1/6', '访问用户': 7123, '年龄': 10, '下单用户': 3567 }
-                        ],
-                        '广州': [
-                            { '日期': '1/1', '访问用户': 123, '年龄': 3, '下单用户': 1244 },
-                            { '日期': '1/2', '访问用户': 1223, '年龄': 6, '下单用户': 2344 },
-                            { '日期': '1/3', '访问用户': 2123, '年龄': 30, '下单用户': 3245 },
-                            { '日期': '1/5', '访问用户': 4123, '年龄': 12, '下单用户': 4355 },
-                            { '日期': '1/4', '访问用户': 5123, '年龄': 18, '下单用户': 4564 },
-                            { '日期': '1/6', '访问用户': 3843, '年龄': 30, '下单用户': 4850 }
-                        ]
-                    }
-                },
-                chartData: {
-                    columns: ['日期', '访问用户', '下单用户', '下单率'],
-                    rows: [
-                        { '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 },
-                        { '日期': '1/2', '访问用户': 3530, '下单用户': 3230, '下单率': 0.26 },
-                        { '日期': '1/3', '访问用户': 2923, '下单用户': 2623, '下单率': 0.76 },
-                        { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 },
-                        { '日期': '1/5', '访问用户': 3792, '下单用户': 3492, '下单率': 0.323 },
-                        { '日期': '1/6', '访问用户': 4593, '下单用户': 4293, '下单率': 0.78 }
-                    ]
-                },
-                waterPoloData: {
-                    columns: ['city', 'percent'],
-                    rows: [{
-                        city: '南京',
-                        percent: 0.6
-                    }]
                 },
                 wordData: {
                     columns: ['word', 'count'],

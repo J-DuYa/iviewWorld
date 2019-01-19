@@ -80,7 +80,9 @@
             width: 400px;
             height: auto;
             .login_title {
-
+                margin-bottom: 20px;
+                color: red;
+                font-size: 20px;
             }
             .ivu-form .ivu-form-item-label {
                 color: #fff;
