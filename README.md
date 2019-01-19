@@ -6,26 +6,31 @@
 > 账号: admin 密码: 123456  
 > 一个有梦想的vue项目
 
+### 整体架构
+- vue  前端使用的语言框架
+- ES6  
+- vue-i18n  语言化处理
+- mockJs  mockJs模拟后台接口
+- axios  http请求
+- nprogress 加载页面进度条
+- paper  
+- vuex  管理store
+- vue-router vue路由
+- iview  前端ui框架
+- js-cookie  cookie
+- vue-canvas-effect  canvas动画第三方插件
+- vue-echarts 流程图
+- VCharts   流程图
+- vue-video-player 视频播放 
+
+### 实现的功能
+  > 后期统计
+
 ## 项目启动
 
 1、 添加依赖
 npm install
-### 整体架构
-- vue  
-- ES6  
-- vue-i18n  
-- mockJs  
-- axios  
-- nprogress  
-- paper  
-- vuex  
-- vue-router  
-- iview  
-- js-cookie  
-- vue-canvas-effect  
-- vue-echarts
-- VCharts
-
+ 
 2、 服务默认启动在 localhost:8080(可以在/config/index.js中修改端口号)
 npm run dev
 

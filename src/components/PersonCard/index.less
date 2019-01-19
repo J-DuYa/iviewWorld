@@ -4,8 +4,16 @@
   }
   .th_world-header {
     width: 398px;
-    img {
-      width: inherit;
+    overflow: hidden;
+    .t_personCard_header {
+      img {
+        width: inherit;
+        transition: all 0.2s linear;
+        &:hover {
+          transform: scale(1.1, 1.1);
+          filter: contrast(130%);
+        }
+      }
     }
     h3 {
       padding: 10px;
