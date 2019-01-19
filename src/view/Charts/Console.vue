@@ -1,7 +1,10 @@
 <template>
-    <div>
+    <div class="mb60">
+        <MessageTip>
+            在图表的世界了，你可以的随意的‘抽象’它，知道它能像人们展示你要表达的意思。
+        </MessageTip>
         <Row>
-            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
+            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 8 }">
                 <MessageAlert
                         class="mt20"
                         :isHasInfoIcon="true"
@@ -10,7 +13,7 @@
                 </MessageAlert>
                 <ve-wordcloud :data="wordData" :settings="wordSetting"></ve-wordcloud>
             </Col>
-            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7, offset: 1 }">
+            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 8, offset: 1 }">
                 <MessageAlert
                         class="mt20"
                         :isHasInfoIcon="true"
@@ -18,6 +21,9 @@
                     k线图
                 </MessageAlert>
                 <ve-candle :data="kData"></ve-candle>
+            </Col>
+            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 8 }">
+                <PersonCard class="mt20"></PersonCard>
             </Col>
         </Row>
     </div>
@@ -191,6 +197,9 @@
         },
         methods: {
 
+        },
+        created() {
+            console.log("触发")
         }
     }
 </script>

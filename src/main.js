@@ -32,6 +32,8 @@ import HeadCard from '@/components/HeadCard'
 import TableComponent from '@/components/Table'
 import PageComponent from '@/components/Page'
 import MessageAlert from '@/components/MessageAlert'
+import MessageTip from '@/components/MessageTip'
+import PersonCard from '@/components/PersonCard'
 
 // 导入语言包
 import message from '@/lang'
@@ -52,6 +54,8 @@ Vue.component(HeadCard.name, HeadCard)
 Vue.component(TableComponent.name, TableComponent)
 Vue.component(PageComponent.name, PageComponent)
 Vue.component(MessageAlert.name, MessageAlert)
+Vue.component(MessageTip.name, MessageTip)
+Vue.component(PersonCard.name, PersonCard)
 
 // 引入mockjs
 require('./mock/mock.js')

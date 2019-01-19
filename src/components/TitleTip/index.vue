@@ -1,5 +1,5 @@
 <template>
-    <div class="th_title mt20">
+    <div class="th_title mt10">
        <div class="name">
             {{title}}
        </div>

@@ -2,7 +2,7 @@
     <Content :style="{margin: '20px', background: '#fff', minHeight: '260px'}" id="th_content" class="text">
         <Scroll
             :height="screemHeight">
-            <keep-alive>
+            <keep-alive :include="cachedViews">
                 <router-view/>
             </keep-alive>
         </Scroll>
@@ -19,6 +19,11 @@
         },
         mounted: function() {
 
+        },
+        computed: {
+            cachedViews() {
+                return []
+            }
         },
         watch: {
             screemHeight() {
