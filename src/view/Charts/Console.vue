@@ -22,9 +22,6 @@
                 </MessageAlert>
                 <ve-candle :data="kData"></ve-candle>
             </Col>
-            <Col :xs="24" :sm="24" :md="24" :lg="{ span: 8 }">
-                <PersonCard class="mt20"></PersonCard>
-            </Col>
         </Row>
     </div>
 </template>

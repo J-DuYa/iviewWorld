@@ -19,7 +19,10 @@ import VCharts from 'v-charts'
 import iView from 'iview'
 import Viewer from 'v-viewer'
 import VueCropper from 'vue-cropper'
+import VideoPlayer from 'vue-video-player'
 import 'iView/dist/styles/iview.css'
+require('video.js/dist/video-js.css')
+require('vue-video-player/src/custom-theme.css')
 import ajax from '@/http/apis'
 
 import './theme.less';
@@ -44,6 +47,7 @@ Vue.use(Viewer)
 Vue.use(VueCropper)
 Vue.use(VueI18n)
 Vue.use(VCharts)
+Vue.use(VideoPlayer);
 // store
 import store from './store'
 

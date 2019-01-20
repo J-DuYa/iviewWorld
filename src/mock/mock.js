@@ -124,6 +124,13 @@ const MenuList = () => {
                     icon: 'ios-person-outline',
                     hasChild: false,
                     parentId: '10001'
+                }, {
+                    id: '10003',
+                    menuUrl: 'video',
+                    title: '视频空间',
+                    icon: 'ios-videocam-outline',
+                    hasChild: false,
+                    parentId: '10001'
                 }]
             }, {
                 id: '100003',

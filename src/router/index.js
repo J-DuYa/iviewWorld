@@ -26,6 +26,10 @@ export default new Router({
                   path: '/basicInfo',
                   name: 'basicInfo',
                   component: () => import('@/view/BasicInfo')
+              }, { // 视频空间
+                  path: '/video',
+                  name: 'video',
+                  component: () => import('@/view/Video')
               }, { // github地址
                   path: '/github',
                   name: 'github',

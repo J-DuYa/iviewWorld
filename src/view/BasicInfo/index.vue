@@ -6,7 +6,7 @@
         </MessageTip>
         <div>
             <Row>
-                <Col :xs="24" :sm="24" :md="24" :lg="{ span: 8 }"class="mt20">
+                <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7 }"class="mt20">
                     <PersonCard></PersonCard>
                 </Col>
                 <Col :xs="24" :sm="24" :md="24" :lg="{ span: 8 }" class="mt20">
@@ -31,37 +31,90 @@
                            <div class="mlr30">
                                <div class="changeImage">
                                    <label class="btn" for="uploads">选择图片</label>
-                                   <input type="file" ref="uploads" id="uploads" style="position:absolute; clip:rect(0 0 0 0);" accept="image/png, image/jpeg, image/gif, image/jpg" @change="setImage($event, 1)">
+                                   <input type="file" ref="uploads" id="uploads" style="position:absolute; clip:rect(0 0 0 0);" accept="image/png, image/jpeg, image/gif, image/jpg" @change="setImage($event, 1, 'cropper')">
                                </div>
                                <Row>
                                    <Col :span="12">
-                                       <Button type="info" @click="changeScale(1)" class="mt10">放大</Button>
+                                       <Button type="info" @click="changeScale(1, 'cropper')" class="mt10">放大</Button>
                                    </Col>
                                    <Col :span="12">
-                                       <Button type="primary" @click="changeScale(-1)" class="mt10">缩小</Button>
+                                       <Button type="primary" @click="changeScale(-1, 'cropper')" class="mt10">缩小</Button>
                                    </Col>
                                </Row>
                                <Row>
                                    <Col :span="12">
-                                       <Button type="primary" @click="rotateLeft" class="mt10">左旋转</Button>
+                                       <Button type="primary" @click="rotateLeft('cropper')" class="mt10">左旋转</Button>
                                    </Col>
                                    <Col :span="12">
-                                       <Button type="info" @click="rotateRight" class="mt10">右旋转</Button>
-                                   </Col>
-                               </Row>
-                               <Row>
-                                   <Col :span="24">
-                                       <Button type="warning" @click="downImg" class="mt10">下载</Button>
+                                       <Button type="info" @click="rotateRight('cropper')" class="mt10">右旋转</Button>
                                    </Col>
                                </Row>
                                <Row>
                                    <Col :span="24">
-                                       <Button type="success" @click="changeHeadImg" class="mt10">上传图片</Button>
+                                       <Button type="warning" @click="downImg('cropper')" class="mt10">下载</Button>
+                                   </Col>
+                               </Row>
+                               <Row>
+                                   <Col :span="24">
+                                       <Button type="success" @click="changeHeadImg('cropper')" class="mt10">上传图片</Button>
                                    </Col>
                                </Row>
                            </div>
                        </div>
                 </Col>
+                <!--<Col :xs="24" :sm="24" :md="24" :lg="{ span: 8, offset: 1 }" class="mt20">-->
+                    <!--<MessageAlert-->
+                            <!--:isHasInfoIcon="true"-->
+                            <!--tipMessage="这里上传卡片的背景"-->
+                            <!--type="primary">-->
+                        <!--上传卡片的背景-->
+                    <!--</MessageAlert>-->
+                    <!--<div class="t_flex_row mt20">-->
+                        <!--<vueCropper-->
+                                <!--:autoCrop="true"-->
+                                <!--:info="true"-->
+                                <!--:full="false"-->
+                                <!--outputType="png"-->
+                                <!--ref="opCropper"-->
+                                <!--autoCropWidth="160"-->
+                                <!--autoCropHeight="160"-->
+                                <!--:img="option.bgImage"-->
+                        <!--&gt;-->
+                        <!--</vueCropper>-->
+                        <!--<div class="mlr30">-->
+                            <!--<div class="changeImage">-->
+                                <!--<label class="btn" for="opUploads">选择图片</label>-->
+                                <!--<input type="file" ref="opUploads" id="opUploads" style="position:absolute; clip:rect(0 0 0 0);" accept="image/png, image/jpeg, image/gif, image/jpg" @change="setImage($event, 1, 'opCropper')">-->
+                            <!--</div>-->
+                            <!--<Row>-->
+                                <!--<Col :span="12">-->
+                                    <!--<Button type="info" @click="changeScale(1, 'opCropper')" class="mt10">放大</Button>-->
+                                <!--</Col>-->
+                                <!--<Col :span="12">-->
+                                    <!--<Button type="primary" @click="changeScale(-1, 'opCropper')" class="mt10">缩小</Button>-->
+                                <!--</Col>-->
+                            <!--</Row>-->
+                            <!--<Row>-->
+                                <!--<Col :span="12">-->
+                                    <!--<Button type="primary" @click="rotateLeft('opCropper')" class="mt10">左旋转</Button>-->
+                                <!--</Col>-->
+                                <!--<Col :span="12">-->
+                                    <!--<Button type="info" @click="rotateRight('opCropper')" class="mt10">右旋转</Button>-->
+                                <!--</Col>-->
+                            <!--</Row>-->
+                            <!--<Row>-->
+                                <!--<Col :span="24">-->
+                                    <!--<Button type="warning" @click="downImg('opCropper')" class="mt10">下载</Button>-->
+                                <!--</Col>-->
+                            <!--</Row>-->
+                            <!--<Row>-->
+                                <!--<Col :span="24">-->
+                                    <!--<Button type="success" @click="changeHeadImg('opCropper')" class="mt10">上传图片</Button>-->
+                                <!--</Col>-->
+                            <!--</Row>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</Col>-->
             </Row>
         </div>
     </div>
@@ -80,17 +133,30 @@
 
                 },
                 option: {
-                    image: this.$store.getters.basicInfo.headImg
-                }
+                    image: this.$store.getters.basicInfo.headImg,
+                    bgImage: this.$store.getters.basicInfo.cardBg
+                },
             }
         },
         methods: {
-            changeHeadImg() {
-                this.$refs.cropper.getCropData(data => {
-                    this.$store.dispatch('changeHeadImg', data)
-                })
+            changeHeadImg(type) {
+                switch (type) {
+                    case 'cropper':
+                        this.$refs.cropper.getCropData(data => {
+                            this.$store.dispatch('changeHeadImg', data)
+                        })
+                        break;
+                    case 'opCropper':
+                        this.$refs.opCropper.getCropData(data => {
+                            this.$store.dispatch('changeHeadBg', data)
+                        })
+                        break;
+                    default:
+                        break;
+                }
+
             },
-            setImage(e, num) {
+            setImage(e, num, type) {
                 var file = e.target.files[0]
                 this.fileUpload = file
                 if (!/\.(gif|jpg|jpeg|png|bmp|GIF|JPG|PNG)$/.test(e.target.value)) {
@@ -106,10 +172,19 @@
                     } else {
                         data = e.target.result
                     }
-                    if (num === 1) {
-                        this.option.image = data
+                    switch (type) {
+                        case 'cropper':
+                            this.option.image = data
+                            this.$refs['uploads'].value = ''
+                            break;
+                        case 'opCropper':
+                            this.option.bgImage = data
+                            this.$refs['opUploads'].value = ''
+                            break;
+                        default:
+                            break;
                     }
-                    this.$refs['uploads'].value = ''
+
                 }
                 // 转化为base64
                 reader.readAsDataURL(file)
@@ -117,31 +192,31 @@
                 // reader.readAsArrayBuffer(file)
             },
             // 放大缩小
-            changeScale(num) {
+            changeScale(num, type) {
                 num = num || 1;
-                this.$refs.cropper.changeScale(num);
+                this.$refs[type].changeScale(num);
             },
             // 左旋转
-            rotateLeft() {
-                this.$refs.cropper.rotateLeft();
+            rotateLeft(type) {
+                this.$refs[type].rotateLeft();
             },
             // 右旋转
-            rotateRight() {
-                this.$refs.cropper.rotateRight();
+            rotateRight(type) {
+                this.$refs[type].rotateRight();
             },
             // 下载
-            downImg(type) {
+            downImg(type, cropper) {
                 let aLink = document.createElement('a');
                 // 获取当前事件
                 let currentDate = new Date().getTime();
                 aLink.download = 'th_world' + currentDate;
                 if (type === 'blob') {
-                    this.$refs.cropper.getCropBlob((data) => {
+                    this.$refs[cropper].getCropBlob((data) => {
                         aLink.href = window.URL.createObjectURL(data)
                         aLink.click()
                     })
                 } else {
-                    this.$refs.cropper.getCropData((data) => {
+                    this.$refs[cropper].getCropData((data) => {
                         aLink.href = data;
                         aLink.click()
                     })
