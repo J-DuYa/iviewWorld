@@ -14,6 +14,7 @@ import VueI18n from 'vue-i18n'
 import Cookies from 'js-cookie'
 import { neon, bubbles } from 'vue-canvas-effect';
 import VCharts from 'v-charts'
+import echarts from 'echarts'
 
 // 引入iview
 import iView from 'iview'
@@ -74,7 +75,7 @@ const il8n = new VueI18n({
 
 // 请求
 window.ajax = ajax;
-
+Vue.prototype.$echarts = echarts
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -24,8 +24,8 @@
         data() {
             return {
                loginInfo: {
-                   username: "",
-                   password: ""
+                   username: "admin",
+                   password: "123456"
                },
                 options: {
                     len: 30, //五边形的单边长度

@@ -1,5 +1,5 @@
 <template>
-    <Content :style="{margin: '20px', background: '#fff', minHeight: '260px'}" id="th_content" class="text">
+    <Content :style="{margin: '20px', background: '#f5f7f9', minHeight: '260px'}" id="th_content" class="text">
         <Scroll
             :height="screemHeight">
             <keep-alive :include="cachedViews">

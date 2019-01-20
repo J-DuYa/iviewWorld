@@ -6,12 +6,13 @@
         </MessageTip>
         <div class="container mt20">
             <div class="player">
-                <video-player  class="video-player vjs-custom-skin"
-                               ref="videoPlayer"
-                               :playsinline="true"
-                               :options="playerOptions"
-                               @play="onPlayerPlay($event)"
-                               @pause="onPlayerPause($event)">
+                <video-player
+                        class="video-player vjs-custom-skin"
+                       ref="videoPlayer"
+                       :playsinline="true"
+                       :options="playerOptions"
+                       @play="onPlayerPlay($event)"
+                       @pause="onPlayerPause($event)">
                 </video-player>
             </div>
         </div>
@@ -25,7 +26,7 @@
         data () {
             return {
                 playerOptions: {
-//        playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
+                    playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
                     autoplay: false, //如果true,浏览器准备好时开始回放。
                     muted: false, // 默认情况下将会消除任何音频。
                     loop: false, // 导致视频一结束就重新开始。
@@ -40,12 +41,12 @@
                     poster: "poster.jpg", //你的封面地址
                     width: document.documentElement.clientWidth,
                     notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
-//        controlBar: {
-//          timeDivider: true,
-//          durationDisplay: true,
-//          remainingTimeDisplay: false,
-//          fullscreenToggle: true  //全屏按钮
-//        }
+                    controlBar: {
+                     timeDivider: true,
+                     durationDisplay: true,
+                     remainingTimeDisplay: false,
+                     fullscreenToggle: true  //全屏按钮
+                    }
                 }
             }
         },

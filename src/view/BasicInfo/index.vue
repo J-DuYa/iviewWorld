@@ -216,10 +216,14 @@
                         aLink.click()
                     })
                 } else {
-                    this.$refs[cropper].getCropData((data) => {
-                        aLink.href = data;
-                        aLink.click()
-                    })
+                    try {
+                        this.$refs[cropper].getCropData((data) => {
+                            aLink.href = data;
+                            aLink.click()
+                        })
+                    } catch (e) {
+                        this.$Message.error('对方不想跟你说话，并向你抛了一个异常！');
+                    }
                 }
             },
         }
