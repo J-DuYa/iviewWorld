@@ -3,12 +3,12 @@
         <Card :class="personCardClass">
             <div class="t_personCard_header">
                 <div slot="header" class="box-card-header">
-                    <img src="https://wpimg.wallstcn.com/e7d23d71-cf19-4b90-a1cc-f56af8c0903d.png">
+                    <img :src="$store.getters.basicInfo.cardBg">
                 </div>
                 <h3>天行健，君子已自强不息；地势坤，君子以厚德载物。</h3>
             </div>
             <div class="t_personCard_body pd10">
-                <img src="https://wpimg.wallstcn.com/e7d23d71-cf19-4b90-a1cc-f56af8c0903d.png">
+                <img :src="$store.getters.basicInfo.headImg">
                 <div class="skill_intr mb10">
                     <span>Css</span>
                     <Progress :percent="100" />

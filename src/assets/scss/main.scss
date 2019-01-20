@@ -20,6 +20,10 @@
   margin-top: 20px;
 }
 
+.mt10 {
+  margin-top: 10px;
+}
+
 .mb20 {
   margin-bottom: 20px;
 }
@@ -34,6 +38,10 @@
 
 .mlr10 {
   margin: 0 10px;
+}
+
+.mlr30 {
+  margin: 0 30px;
 }
 
 .text-center {
@@ -74,3 +82,9 @@ canvas {
   width: 100%!important;
 }
 
+
+/** flex **/
+.t_flex_row {
+  display: flex;
+  justify-content: flex-start;
+}

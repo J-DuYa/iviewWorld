@@ -3,7 +3,7 @@
         <Layout>
             <Sider ref="sideRoute" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed" class="menuSider" v-show="!isCollapsed">
                 <div class="headerImg">
-                    <img :src="github"/>
+                    <img :src="$store.getters.basicInfo.headImg"/>
                 </div>
                 <MenuSider :menuitemClasses.sync="menuitemClasses" class="th_Menu" :isCollapsed.sync="isCollapsed"/>
             </Sider>
@@ -19,7 +19,7 @@
                        <!-- 用户头像 -->
                        <div v-show="!isCollapsed">
                            <i id="th_theme">&nbsp;</i>
-                           <Avatar :src="github" />
+                           <Avatar :src="$store.getters.basicInfo.headImg" />
                            &nbsp;
                            <Dropdown placement="bottom-start" @on-click="chooseDrop">
                                <a href="javascript:void(0)">
@@ -60,7 +60,6 @@
             // 得到取色器的颜色
             changeThemeColor(theme) {
                 console.log(theme)
-                // 想到一个投机取巧的方法 !-- （sorry）
                 this.$store.dispatch('changeThemeColor', theme)
             },
             collapsedSider () {
@@ -113,8 +112,8 @@
         justify-content: center;
         align-items: center;
         img {
-           width: 40%;
-           height: 40%;
+           width: 80px;
+           height: 80px;
            border-radius: 100%;
         }
     }
