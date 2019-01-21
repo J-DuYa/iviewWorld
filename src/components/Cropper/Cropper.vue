@@ -1,27 +1,28 @@
 <template>
-    <div>
-        {{isShowModel}}
-        {{isShowCropper}}
-        <Modal
-                title="Title"
-                v-model="isShowCropper"
-                :mask-closable="false"
-                @onCancel="closeModel">
-            <p>Content of dialog</p>
-            <p>Content of dialog</p>
-            <p>Content of dialog</p>
-        </Modal>
-    </div>
+    <Modal
+        :title="title"
+        v-model="isShowCropper"
+        :mask-closable="false"
+        @on-cancel="closeModel"
+        @on-ok="submitCropper">
+        <p>Content of dialog</p>
+        <p>Content of dialog</p>
+        <p>Content of dialog</p>
+    </Modal>
 </template>
 
 <script>
     export default {
         name: "Cropper",
         props: {
-          isShowModel: {
-              type: Boolean,
-              default: false
-          }
+            title: {
+                type: String,
+                default: '上传图片'
+            },
+            isShowModel: {
+                type: Boolean,
+                default: false
+            }
         },
         components: {},
         data() {
@@ -30,14 +31,20 @@
             }
         },
         methods: {
-          closeModel() {
-              this.$emit('isShowModel', false)
-          }
+            closeModel() {
+              this.$emit('update:isShowModel', false)
+            },
+            submitCropper() {
+
+            }
         },
         watch: {
             isShowModel(val) {
                 this.isShowCropper = val
             }
+        },
+        created() {
+            console.log(this.isShowModel)
         }
     }
 </script>

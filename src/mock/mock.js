@@ -234,14 +234,33 @@ const getUserList = (param) => {
     let data = {};
     let dataList = [];
     let page = {};
+    let paramsObj = params.name && params.className ? {
+        name: params.name,
+        // age: Random.number()
+        className: params.className,
+        'age|1-122': 122,
+        date: Random.date()
+    } : params.name && !params.className ? {
+        name: params.name,
+        // age: Random.number()
+        'className|1-10': 10,
+        'age|1-122': 122,
+        date: Random.date()
+    } : !params.name && params.className ? {
+        name: params.name,
+        // age: Random.number()
+        className: params.className,
+        'age|1-122': 122,
+        date: Random.date()
+    } : {
+        name: Random.cname(),
+        // age: Random.number()
+        'className|1-10': 10,
+        'age|1-122': 122,
+        date: Random.date()
+    };
     for(let index = 0; index < params.pageSize; index ++) {
-        dataList.push(Mock.mock({
-            name: Random.cname(),
-            // age: Random.number()
-            'className|1-10': 10,
-            'age|1-122': 122,
-            date: Random.date()
-        }))
+        dataList.push(Mock.mock(paramsObj))
     }
     page = Mock.mock({
         'total|1-10000': 10,

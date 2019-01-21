@@ -4,15 +4,20 @@
         :page-size="pageSize"
         :show-elevator="config.showElevator"
         :show-sizer="config.showSizer"
+        :current="current"
         show-total
-        @on-change="$emit('changePageNum')"
-        @on-page-size-change="$emit('changePageSize')"/>
+        @on-change="currentChange"
+        @on-page-size-change="sizeChange"/>
 </template>
 
 <script>
     export default {
         name: "PageComponent",
         props: {
+            current: {
+                type: Number,
+                default: 1
+            },
             pageTotal: {
                 type: Number,
                 default: 0
@@ -28,16 +33,13 @@
                 }
             }
         },
-        data() {
-          return {
-
-          }
-        },
         methods: {
-
-        },
-        watch: {
-
+            currentChange(pageNo) {
+                this.$emit('changePageNum', pageNo)
+            },
+            sizeChange(pageSize){
+                this.$emit("changePageSize",pageSize)
+            }
         }
     }
 </script>

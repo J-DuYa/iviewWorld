@@ -1,5 +1,7 @@
 # 第三方世界
 
+> 在茫茫人海中，你只给别人杯水般的帮助，对别人来说都是无法比拟的。 谢谢那些帮助过我的好人😝
+
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 > [线上访问地址](http://212.64.54.51)  
