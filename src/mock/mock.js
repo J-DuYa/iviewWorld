@@ -156,16 +156,23 @@ const MenuList = () => {
                 hasChild: true,
                 child: [{
                     id: '2',
-                    menuUrl: 'commonTable',
+                    menuUrl: 'markdomEditor',
                     title: 'Markdom',
                     icon: 'ios-grid-outline',
                     hasChild: false,
                     parentId: '1'
                 }, {
                     id: '3',
-                    menuUrl: 'commonTable',
-                    title: '普通编辑器',
+                    menuUrl: 'editor',
+                    title: '富文本编辑器',
                     icon: 'ios-grid-outline',
+                    hasChild: false,
+                    parentId: '1'
+                }, {
+                    id: '4',
+                    menuUrl: 'codeEditor',
+                    title: '代码编辑器',
+                    icon: 'ios-code',
                     hasChild: false,
                     parentId: '1'
                 }]

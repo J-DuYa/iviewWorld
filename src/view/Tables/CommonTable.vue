@@ -1,11 +1,11 @@
 <template>
     <div class="">
         <TitleTip title="基础表格"></TitleTip>
-        <Form ref="searchInfo" :model="searchInfo" inline :label-width="80" class="mt20">
-            <FormItem label="姓名：" prop="name">
+        <Form ref="searchInfo" :model="searchInfo" inline class="mt20">
+            <FormItem label="姓名：" prop="name" :label-width="60">
                 <Input v-model.trim="searchInfo.name" placeholder="请输入姓名"></Input>
             </FormItem>
-            <FormItem label="班级：" prop="className">
+            <FormItem label="班级：" prop="className" :label-width="60">
                 <Input v-model.trim="searchInfo.className" placeholder="请输入班级"></Input>
             </FormItem>
             <FormItem>
@@ -15,11 +15,13 @@
         </Form>
         <Card class="tableCard" :dis-hover="true">
             <TableComponent
-                    :columns.sync="columns1"
-                    :data.sync="data1"
-                    :config.sync=config
-                    class="mt20"
-            ></TableComponent>
+                :columns.sync="columns1"
+                :data.sync="data1"
+                :config.sync="config"
+                @chooseTr="chooseTr"
+                @remove="remove"
+                class="mt20">
+            </TableComponent>
             <div class="th_page mt20 pd10">
                 <PageComponent
                      :config.sync="config"
@@ -43,6 +45,7 @@
                     name: "",
                     className: ""
                 },
+                selectTr: null,
                 // 简单表格
                 pageSize: 10,
                 currentPage: 1,
@@ -79,29 +82,9 @@
                     },
                     {
                         title: '操作',
-                        align: 'center',
-                        key: 'operation',
-                        minWidth: 100,
-                        fixed: 'right',
-                        render: (h, params) => {
-                            return h('div', [
-                                h('Button', {
-                                    props: {
-                                        type: 'primary',
-                                        size: 'small'
-                                    },
-                                    style: {
-                                        marginRight: '5px'
-                                    }
-                                }, '显示详情'),
-                                h('Button', {
-                                    props: {
-                                        type: 'warning',
-                                        size: 'small'
-                                    }
-                                }, '删除')
-                            ])
-                        }
+                        slot: 'operation',
+                        width: 250,
+                        align: 'center'
                     }
                 ],
                 data1: [],
@@ -158,6 +141,17 @@
           init() {
             this.getData()
           },
+          showInfo() {
+            console.log(this.selectTr)
+          },
+          // 表格高亮操作
+          chooseTr(currentRow, oldCurrentRow) {
+            // console.log(currentRow, oldCurrentRow)
+              this.selectTr = currentRow
+          },
+          remove(obj, index) {
+              this.data1.splice(index, 1);
+          }
         },
         created() {
             this.getData()

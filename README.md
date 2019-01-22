@@ -22,8 +22,11 @@
 - js-cookie  cookie
 - vue-canvas-effect  canvas动画第三方插件
 - vue-echarts 流程图
-- VCharts   流程图
+- echart 流程图
 - vue-video-player 视频播放 
+- codemirror 代码编辑器
+- showdown markdom编辑器
+- vue-quill-editor 富文本编辑器
 
 ### 实现的功能
   > 后期统计
