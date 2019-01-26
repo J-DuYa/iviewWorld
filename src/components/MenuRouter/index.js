@@ -87,28 +87,6 @@ const routers = [
             icon: 'ios-grid-outline',
             hasChild: false,
             parentId: '1'
-        }, {
-            id: '4',
-            menuUrl: 'codeEditor',
-            title: '代码编辑器',
-            icon: 'ios-code',
-            hasChild: false,
-            parentId: '1'
-        }]
-    }, {
-        id: '10',
-        parentsId: ['11'],
-        menuUrl: '',
-        title: '图片化妆',
-        icon: 'md-images',
-        hasChild: true,
-        child: [{
-            id: '12',
-            menuUrl: 'commonTable',
-            title: '图片裁剪',
-            icon: 'ios-images-outline',
-            hasChild: false,
-            parentId: '11'
         }]
     }, {
         id: '100',
@@ -119,27 +97,11 @@ const routers = [
         hasChild: true,
         child: [{
             id: '102',
-            menuUrl: 'commonTable',
+            menuUrl: 'weixin',
             title: '微信',
             icon: 'ios-chatbubbles',
             hasChild: false,
             parentId: '101'
-        }]
-    },
-    {
-        id: '100000',
-        parentsId: ['100001'],
-        menuUrl: '',
-        title: '调色板',
-        icon: 'logo-rss',
-        hasChild: true,
-        child: [{
-            id: '100002',
-            menuUrl: 'palette',
-            title: '主题换色',
-            icon: 'ios-outlet',
-            hasChild: false,
-            parentId: '100001'
         }]
     },
     {

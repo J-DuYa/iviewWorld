@@ -39,7 +39,6 @@ import MessageAlert from '@/components/MessageAlert'
 import MessageTip from '@/components/MessageTip'
 import PersonCard from '@/components/PersonCard'
 import Cropper from '@/components/Cropper'
-import ThCode from '@/components/Code'
 import ThEditor from '@/components/Editor'
 import ThMarkdown from '@/components/Markdown'
 
@@ -66,7 +65,6 @@ Vue.component(MessageAlert.name, MessageAlert)
 Vue.component(MessageTip.name, MessageTip)
 Vue.component(PersonCard.name, PersonCard)
 Vue.component(Cropper.name, Cropper)
-Vue.component(ThCode.name, ThCode)
 Vue.component(ThEditor.name, ThEditor)
 Vue.component(ThMarkdown.name, ThMarkdown)
 

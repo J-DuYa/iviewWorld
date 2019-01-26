@@ -58,11 +58,12 @@ export default new Router({
                   path: '/editor',
                   name: 'editor',
                   component: () => import('@/view/Editors/Editor')
-              }, { // 代码编辑器
-                  path: '/codeEditor',
-                  name: 'codeEditor',
-                  component: () => import('@/view/Editors/CodeEditor')
+              }, { // weixin
+                  path: '/weixin',
+                  name: 'weixin',
+                  component: () => import('@/view/WeiXin/WeiXin')
               }
+
 
           ]
       }
