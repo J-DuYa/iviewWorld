@@ -62,59 +62,6 @@
                            </div>
                        </div>
                 </Col>
-                <!--<Col :xs="24" :sm="24" :md="24" :lg="{ span: 8, offset: 1 }" class="mt20">-->
-                    <!--<MessageAlert-->
-                            <!--:isHasInfoIcon="true"-->
-                            <!--tipMessage="这里上传卡片的背景"-->
-                            <!--type="primary">-->
-                        <!--上传卡片的背景-->
-                    <!--</MessageAlert>-->
-                    <!--<div class="t_flex_row mt20">-->
-                        <!--<vueCropper-->
-                                <!--:autoCrop="true"-->
-                                <!--:info="true"-->
-                                <!--:full="false"-->
-                                <!--outputType="png"-->
-                                <!--ref="opCropper"-->
-                                <!--autoCropWidth="160"-->
-                                <!--autoCropHeight="160"-->
-                                <!--:img="option.bgImage"-->
-                        <!--&gt;-->
-                        <!--</vueCropper>-->
-                        <!--<div class="mlr30">-->
-                            <!--<div class="changeImage">-->
-                                <!--<label class="btn" for="opUploads">选择图片</label>-->
-                                <!--<input type="file" ref="opUploads" id="opUploads" style="position:absolute; clip:rect(0 0 0 0);" accept="image/png, image/jpeg, image/gif, image/jpg" @change="setImage($event, 1, 'opCropper')">-->
-                            <!--</div>-->
-                            <!--<Row>-->
-                                <!--<Col :span="12">-->
-                                    <!--<Button type="info" @click="changeScale(1, 'opCropper')" class="mt10">放大</Button>-->
-                                <!--</Col>-->
-                                <!--<Col :span="12">-->
-                                    <!--<Button type="primary" @click="changeScale(-1, 'opCropper')" class="mt10">缩小</Button>-->
-                                <!--</Col>-->
-                            <!--</Row>-->
-                            <!--<Row>-->
-                                <!--<Col :span="12">-->
-                                    <!--<Button type="primary" @click="rotateLeft('opCropper')" class="mt10">左旋转</Button>-->
-                                <!--</Col>-->
-                                <!--<Col :span="12">-->
-                                    <!--<Button type="info" @click="rotateRight('opCropper')" class="mt10">右旋转</Button>-->
-                                <!--</Col>-->
-                            <!--</Row>-->
-                            <!--<Row>-->
-                                <!--<Col :span="24">-->
-                                    <!--<Button type="warning" @click="downImg('opCropper')" class="mt10">下载</Button>-->
-                                <!--</Col>-->
-                            <!--</Row>-->
-                            <!--<Row>-->
-                                <!--<Col :span="24">-->
-                                    <!--<Button type="success" @click="changeHeadImg('opCropper')" class="mt10">上传图片</Button>-->
-                                <!--</Col>-->
-                            <!--</Row>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</Col>-->
             </Row>
         </div>
     </div>

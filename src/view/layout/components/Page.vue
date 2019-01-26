@@ -3,7 +3,9 @@
         <Scroll
             :height="screemHeight">
             <keep-alive :include="cachedViews">
-                <router-view/>
+                <transition name="slide-fade" mode="out-in" @after-leave="afterLeave">
+                    <router-view/>
+                </transition>
             </keep-alive>
         </Scroll>
     </Content>
@@ -19,6 +21,11 @@
         },
         mounted: function() {
 
+        },
+        methods: {
+            afterLeave () {
+                window.scrollTo(0, 0)
+            }
         },
         computed: {
             cachedViews() {
@@ -37,6 +44,16 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+    .slide-fade-enter-active {
+        transition: all .2s ease;
+    }
+    .slide-fade-leave-active {
+        transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-enter, .slide-fade-leave-to
+        /* .slide-fade-leave-active for below version 2.1.8 */ {
+        transform: translateX(10px);
+        opacity: 0;
+    }
 </style>

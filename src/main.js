@@ -40,6 +40,8 @@ import MessageTip from '@/components/MessageTip'
 import PersonCard from '@/components/PersonCard'
 import Cropper from '@/components/Cropper'
 import ThCode from '@/components/Code'
+import ThEditor from '@/components/Editor'
+import ThMarkdown from '@/components/Markdown'
 
 // 导入语言包
 import message from '@/lang'
@@ -65,6 +67,8 @@ Vue.component(MessageTip.name, MessageTip)
 Vue.component(PersonCard.name, PersonCard)
 Vue.component(Cropper.name, Cropper)
 Vue.component(ThCode.name, ThCode)
+Vue.component(ThEditor.name, ThEditor)
+Vue.component(ThMarkdown.name, ThMarkdown)
 
 // 引入mockjs
 require('./mock/mock.js')

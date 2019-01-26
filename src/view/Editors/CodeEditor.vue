@@ -1,5 +1,9 @@
 <template>
     <div>
+        <MessageTip class="mb20">
+            代码编辑器<br/>
+            到此可以编写js代码
+        </MessageTip>
         <ThCode></ThCode>
     </div>
 </template>
@@ -21,6 +25,6 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

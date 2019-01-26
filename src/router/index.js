@@ -50,6 +50,18 @@ export default new Router({
                   path: '/palette',
                   name: 'palette',
                   component: () => import('@/view/Palette')
+              }, { // markdom
+                  path: '/markdomEditor',
+                  name: 'markdomEditor',
+                  component: () => import('@/view/Editors/Markdom')
+              }, { // 富文本编辑器
+                  path: '/editor',
+                  name: 'editor',
+                  component: () => import('@/view/Editors/Editor')
+              }, { // 代码编辑器
+                  path: '/codeEditor',
+                  name: 'codeEditor',
+                  component: () => import('@/view/Editors/CodeEditor')
               }
 
           ]
