@@ -11,10 +11,9 @@ function permission() {
 
 Router.beforeEach((to, from, next) => {
     NProgress.start()
-    console.log(to);
-    console.log(from);
+
     if(!to.name) {
-        next({ path: '/' })
+        next({ path: '/404' })
     }
 
     if(to.name === 'login') {

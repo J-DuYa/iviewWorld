@@ -63,8 +63,42 @@ export default new Router({
                   name: 'weixin',
                   component: () => import('@/view/WeiXin/WeiXin')
               }
-
-
+          ]
+      }, { // 404
+          path: '/404',
+          name: '404',
+          component: TLayout,
+          redirect: 'Exception404',
+          children: [
+              { // 异常404
+                  path: '/Exception404',
+                  name: 'Exception404',
+                  component: () => import('@/view/Exception/404')
+              }
+          ]
+      }, { // 500
+          path: '/500',
+          name: '500',
+          component: TLayout,
+          redirect: 'Exception500',
+          children: [
+              { // 异常500
+                  path: '/Exception500',
+                  name: 'Exception500',
+                  component: () => import('@/view/Exception/500')
+              }
+          ]
+      }, { // 505
+          path: '/505',
+          name: '505',
+          component: TLayout,
+          redirect: 'Exception505',
+          children: [
+              { // 异常505
+                  path: '/Exception505',
+                  name: 'Exception505',
+                  component: () => import('@/view/Exception/505')
+              }
           ]
       }
 

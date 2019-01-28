@@ -6,6 +6,7 @@
  * @Last Modified time: 2018-11-04 20:51:12
  */
 import axios from 'axios'
+import route from './../router'
 import Qs from 'qs'
 // 全局显示通知
 import { Notice } from 'iview'
@@ -29,6 +30,12 @@ let http = {
 * desc: check http status belongs to which type
 */
 const checkStatus = (response) => {
+    if(response.status === 500) {
+        route.push("500")
+    }
+    if(response.status === 505) {
+        route.push("505")
+    }
     const errorText = http.status[response.status];
     Notice.error({
         title: '错误代码：' + response.status,
