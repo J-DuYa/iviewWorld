@@ -34,8 +34,9 @@
     .flexException {
         display: flex;
         justify-content: center;
+        align-items: center;
         img {
-            width: 40%;
+            width: 60%;
             height: 40%;
         }
         .exceptionInfo {
