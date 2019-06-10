@@ -49,7 +49,7 @@ const checkStatus = (response) => {
     }
     const errorText = http.status[response.status];
     Notice.error({
-        title: `Request error ${response.status}`
+        title: `Request error ${response.status}`,
         desc: errorText
     });
     const error = new Error(errorText);
