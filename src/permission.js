@@ -4,6 +4,8 @@ import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css'// progress bar style
 import store from '@/store'
 
+NProgress.configure({ showSpinner: false });
+
 // 进入页面之前
 function permission() {
 
