@@ -15,10 +15,21 @@ let _that = this;
 // 封装通用的请求状态信息 错误请求统一管理
 let http = {
     status: {
-        '200': '请求成功!',
-        '403': '请求超时',
-        '404': '未连接到接口',
-        '500': '服务器跑丢了'
+      200: "The server successfully returned the requested data.",
+      201: "New or modified data is successful.",
+      202: "A request has entered the background queue (asynchronous task).",
+      204: "The data was deleted successfully.",
+      400: "The request was made with an error and the server did not perform any operations to create or modify data.",
+      401: "User does not have permission (token, username, password is incorrect).",
+      403: "The user is authorized, but access is forbidden.",
+      404: "The request is made for a record that does not exist and the server does not operate.",
+      406: "The format of the request is not available.",
+      410: "The requested resource is permanently deleted and will not be retrieved.",
+      422: "A validation error occurred when creating an object.",
+      500: "An error occurred on the server. Please check the server.",
+      502: "Gateway error.",
+      503: "The service is unavailable and the server is temporarily overloaded or maintained.",
+      504: "The gateway timed out."
     }
 };
 
@@ -38,7 +49,7 @@ const checkStatus = (response) => {
     }
     const errorText = http.status[response.status];
     Notice.error({
-        title: '错误代码：' + response.status,
+        title: `Request error ${response.status}`
         desc: errorText
     });
     const error = new Error(errorText);
