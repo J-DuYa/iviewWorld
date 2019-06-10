@@ -6,12 +6,7 @@ import store from '@/store'
 
 NProgress.configure({ showSpinner: false });
 
-// 进入页面之前
-function permission() {
-
-}
-
-Router.beforeEach((to, from, next) => {
+Router.beforeEach(async (to, from, next) => {
     NProgress.start()
 
     if(!to.name) {
