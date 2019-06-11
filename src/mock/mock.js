@@ -251,7 +251,7 @@ const getUserList = (param) => {
 
 
 // 登录接口
-Mock.mock(RegExp('/sso/login' + '*'), 'post', (options) => {
+Mock.mock(RegExp('/sso/login'), 'post', (options) => {
     return getLoginUser(options)
 });
 // 菜单接口
