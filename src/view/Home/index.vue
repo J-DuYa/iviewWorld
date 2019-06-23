@@ -1,7 +1,7 @@
 <template>
     <div class="th_home homeBg">
         <bubbles-effect :options="options"></bubbles-effect>
-        <p class="text-center th_home_title" style="z-index: 9999">第三方世界</p>
+        <p class="text-center th_home_title" style="z-index: 9999">毒牙世界</p>
     </div>
 </template>
 

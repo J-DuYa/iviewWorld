@@ -1,8 +1,10 @@
 <template>
     <div class="t_Login">
         <!--<canvas id="triangle-lost-in-space" resize="true"></canvas>-->
-        <neon-effect :options="options"></neon-effect>
+<!--        <neon-effect :options="options"></neon-effect>-->
         <div class="t_login_form">
+            <div class="dy-title">毒牙世界</div>
+            <h3>当你努力的时候，再毒也没有什么。</h3>
             <Form ref="loginInfo" :model="loginInfo" :label-width="60">
                 <FormItem label="账号：" prop="username">
                     <Input type="text" size="large" v-model="loginInfo.username"></Input>
@@ -27,18 +29,18 @@
                    username: "admin",
                    password: "123456"
                },
-                options: {
-                    len: 30, //五边形的单边长度
-                    count: 66, //多少线重叠
-                    rate: 20, //速度 越小越快
-                    dieChance: 0.05, //单次绘画失败进行重绘的几率
-                    sparkChance: 0.1, //[0,1] 越大画出的五边形越多重
-                    sparkDist: 10, //闪烁点的距离
-                    sparkSize: 2,//闪烁点的大小
-                    contentLight: 60, // [0,100] 色块的亮度
-                    shadowToTimePropMult: 6, //五边形的内环阴影大小
-                    bgColorArr: [0, 0, 0] //背景色数组
-                }
+                // options: {
+                //     len: 30, //五边形的单边长度
+                //     count: 66, //多少线重叠
+                //     rate: 20, //速度 越小越快
+                //     dieChance: 0.05, //单次绘画失败进行重绘的几率
+                //     sparkChance: 0.1, //[0,1] 越大画出的五边形越多重
+                //     sparkDist: 10, //闪烁点的距离
+                //     sparkSize: 2,//闪烁点的大小
+                //     contentLight: 60, // [0,100] 色块的亮度
+                //     shadowToTimePropMult: 6, //五边形的内环阴影大小
+                //     bgColorArr: [0, 0, 0] //背景色数组
+                // }
             }
         },
         methods: {
@@ -73,12 +75,31 @@
         right: 0;
         overflow: hidden;
         /*background: url("./../../assets/images/login/background.jpg") no-repeat;*/
+        background-image: url("https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg");
         background-attachment: fixed;
-        background-size: 100% 100%;
+        background-size: contain;
         .t_login_form {
-            margin: 15% auto 0;
+            margin: 20vh auto 0;
+            left: -60px;
             width: 400px;
             height: auto;
+            .dy-title {
+                /*padding: 10px;*/
+                text-align: center;
+                font-size: 22px;
+                font-weight: bold;
+                height: 60px;
+                padding-left: 60px;
+                color: #333;
+            }
+            h3 {
+                margin-bottom: 20px;
+                padding: 0 0 0 60px;
+                font-size: 12px;
+                color: #999;
+                text-align: center;
+                font-weight: normal;
+            }
             .login_title {
                 margin-bottom: 20px;
                 color: red;
@@ -88,7 +109,7 @@
                 color: #fff;
             }
             .ivu-input-large, .ivu-btn {
-                width: 240px;
+                /*width: 240px;*/
             }
             .ivu-input-large {
                 padding: 15px 10px;
