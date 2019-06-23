@@ -5,7 +5,7 @@
 import { Message } from 'iview'
 const basicInfo = {
     state: {
-        headImg: 'https://wpimg.wallstcn.com/e7d23d71-cf19-4b90-a1cc-f56af8c0903d.png',
+        headImg: 'https://avatars0.githubusercontent.com/u/34503154?s=460&v=4',
         cardBg: 'https://wpimg.wallstcn.com/e7d23d71-cf19-4b90-a1cc-f56af8c0903d.png'
     },
     mutations: {

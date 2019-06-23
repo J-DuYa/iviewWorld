@@ -89,8 +89,8 @@
             .dy-title {
                 /*padding: 10px;*/
                 text-align: center;
-                font-size: 22px;
-                font-weight: bold;
+                font-size: 30px;
+                font-weight: bolder;
                 height: 60px;
                 padding-left: 60px;
                 color: #333;

@@ -44,7 +44,6 @@
                 // this.$emit('chooseTr', currentRow, oldCurrentRow)
             },
             deleteItem(obj, index) {
-                console.log(obj)
                 this.$emit('remove', obj, index)
             }
         }
