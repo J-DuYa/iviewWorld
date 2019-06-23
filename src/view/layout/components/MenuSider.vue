@@ -52,7 +52,7 @@
         },
         methods: {
             selectMenu(name) {
-                console.log(name)
+                // console.log(name)
             },
             getMenuList() {
                 ajax.get('/home/getMenuList').then(res => {

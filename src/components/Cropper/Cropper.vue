@@ -44,7 +44,7 @@
             }
         },
         created() {
-            console.log(this.isShowModel)
+            // console.log(this.isShowModel)
         }
     }
 </script>

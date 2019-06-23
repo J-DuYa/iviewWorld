@@ -39,9 +39,7 @@
         },
         methods: {
             handleRowChange(currentRow, oldCurrentRow) {
-                // console.log(currentRow)
-                // console.log(oldCurrentRow)
-                // this.$emit('chooseTr', currentRow, oldCurrentRow)
+
             },
             deleteItem(obj, index) {
                 this.$emit('remove', obj, index)

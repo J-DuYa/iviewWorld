@@ -6,7 +6,7 @@
 import LoginCanvas from './modules/login'
 
 const Th_canvas = () => {
-    console.log(...arguments)
+    // console.log(...arguments)
 };
 
 export default Th_canvas;

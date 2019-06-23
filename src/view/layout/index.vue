@@ -59,7 +59,6 @@
         methods: {
             // 得到取色器的颜色
             changeThemeColor(theme) {
-                console.log(theme)
                 this.$store.dispatch('changeThemeColor', theme)
             },
             collapsedSider () {
@@ -67,7 +66,6 @@
             },
 
             chooseDrop(name) {
-                console.log(name)
                 switch (name) {
                     case 'basicInfo':
                         this.$router.push({
