@@ -14,7 +14,7 @@ Router.beforeEach(async (to, from, next) => {
     }
 
     if(to.name === 'login') {
-        console.log("进入登录页面, 清空所有关联数据");
+        // console.log("进入登录页面, 清空所有关联数据");
     }
     routers && routers.map((item, index) => {
         if( item.hasChild ) {
