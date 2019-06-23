@@ -73,14 +73,17 @@
         bottom: 0;
         left: 0;
         right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         overflow: hidden;
         /*background: url("./../../assets/images/login/background.jpg") no-repeat;*/
         background-image: url("https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg");
         background-attachment: fixed;
         background-size: contain;
         .t_login_form {
-            margin: 20vh auto 0;
-            left: -60px;
+            margin-top: -150px;
+            margin-left: -60px;
             width: 400px;
             height: auto;
             .dy-title {
