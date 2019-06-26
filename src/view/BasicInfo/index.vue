@@ -6,61 +6,60 @@
         </MessageTip>
         <div>
             <Row>
-                <Col :xs="24" :sm="24" :md="24" :lg="{ span: 7 }"class="mt20">
+                <Col :xs="24" :sm="24" :md="24" :lg="8"class="mt20">
                     <PersonCard></PersonCard>
                 </Col>
-                <Col :xs="24" :sm="24" :md="24" :lg="{ span: 8 }" class="mt20">
+                <Col :xs="24" :sm="24" :md="24" :lg="8" class="mt20">
                     <MessageAlert
-                            :isHasInfoIcon="true"
-                            tipMessage="这里上传个人头像"
-                            type="purple">
+                    :isHasInfoIcon="true"
+                    tipMessage="这里上传个人头像"
+                    type="purple">
                         上传头像
                     </MessageAlert>
-                       <div class="t_flex_row mt20">
-                           <vueCropper
-                                   :autoCrop="true"
-                                   :info="true"
-                                   :full="false"
-                                   outputType="png"
-                                   ref="cropper"
-                                   autoCropWidth="160"
-                                   autoCropHeight="160"
-                                   :img="option.image"
-                           >
-                           </vueCropper>
-                           <div class="mlr30">
-                               <div class="changeImage">
-                                   <label class="btn" for="uploads">选择图片</label>
-                                   <input type="file" ref="uploads" id="uploads" style="position:absolute; clip:rect(0 0 0 0);" accept="image/png, image/jpeg, image/gif, image/jpg" @change="setImage($event, 1, 'cropper')">
-                               </div>
-                               <Row>
-                                   <Col :span="12">
-                                       <Button type="info" @click="changeScale(1, 'cropper')" class="mt10">放大</Button>
-                                   </Col>
-                                   <Col :span="12">
-                                       <Button type="primary" @click="changeScale(-1, 'cropper')" class="mt10">缩小</Button>
-                                   </Col>
-                               </Row>
-                               <Row>
-                                   <Col :span="12">
-                                       <Button type="primary" @click="rotateLeft('cropper')" class="mt10">左旋转</Button>
-                                   </Col>
-                                   <Col :span="12">
-                                       <Button type="info" @click="rotateRight('cropper')" class="mt10">右旋转</Button>
-                                   </Col>
-                               </Row>
-                               <Row>
-                                   <Col :span="24">
-                                       <Button type="warning" @click="downImg('cropper')" class="mt10">下载</Button>
-                                   </Col>
-                               </Row>
-                               <Row>
-                                   <Col :span="24">
-                                       <Button type="success" @click="changeHeadImg('cropper')" class="mt10">上传图片</Button>
-                                   </Col>
-                               </Row>
+                    <div class="t_flex_row mt20">
+                       <vueCropper
+                       :autoCrop="true"
+                       :info="true"
+                       :full="false"
+                       outputType="png"
+                       ref="cropper"
+                       autoCropWidth="160"
+                       autoCropHeight="160"
+                       :img="option.image">
+                       </vueCropper>
+                       <div class="mlr30">
+                           <div class="changeImage">
+                               <label class="btn" for="uploads">选择图片</label>
+                               <input type="file" ref="uploads" id="uploads" style="position:absolute; clip:rect(0 0 0 0);" accept="image/png, image/jpeg, image/gif, image/jpg" @change="setImage($event, 1, 'cropper')">
                            </div>
+                           <Row>
+                               <Col :span="12">
+                                   <Button type="info" @click="changeScale(1, 'cropper')" class="mt10">放大</Button>
+                               </Col>
+                               <Col :span="12">
+                                   <Button type="primary" @click="changeScale(-1, 'cropper')" class="mt10">缩小</Button>
+                               </Col>
+                           </Row>
+                           <Row>
+                               <Col :span="12">
+                                   <Button type="primary" @click="rotateLeft('cropper')" class="mt10">左旋转</Button>
+                               </Col>
+                               <Col :span="12">
+                                   <Button type="info" @click="rotateRight('cropper')" class="mt10">右旋转</Button>
+                               </Col>
+                           </Row>
+                           <Row>
+                               <Col :span="24">
+                                   <Button type="warning" @click="downImg('cropper')" class="mt10">下载</Button>
+                               </Col>
+                           </Row>
+                           <Row>
+                               <Col :span="24">
+                                   <Button type="success" @click="changeHeadImg('cropper')" class="mt10">上传图片</Button>
+                               </Col>
+                           </Row>
                        </div>
+                    </div>
                 </Col>
             </Row>
         </div>
@@ -80,7 +79,7 @@
 
                 },
                 option: {
-                    image: this.$store.getters.basicInfo.headImg,
+                    image: '',
                     bgImage: this.$store.getters.basicInfo.cardBg
                 },
             }

@@ -146,6 +146,13 @@ const MenuList = () => {
                     icon: 'ios-grid-outline',
                     hasChild: false,
                     parentId: '100003'
+                }, {
+                    id: '100005',
+                    menuUrl: 'complexTable',
+                    title: '复杂表格',
+                    icon: 'ios-grid-outline',
+                    hasChild: false,
+                    parentId: '100003'
                 }]
             }, {
                 id: '1',
@@ -208,25 +215,29 @@ const getUserList = (param) => {
         // age: Random.number()
         className: params.className,
         'age|1-122': 122,
-        date: Random.date()
+        date: Random.date(),
+        'status|0-1': 0
     } : params.name && !params.className ? {
         name: params.name,
         // age: Random.number()
         'className|1-10': 10,
         'age|1-122': 122,
-        date: Random.date()
+        date: Random.date(),
+        'status|0-1': 0
     } : !params.name && params.className ? {
         name: params.name,
         // age: Random.number()
         className: params.className,
         'age|1-122': 122,
-        date: Random.date()
+        date: Random.date(),
+        'status|0-1': 0
     } : {
         name: Random.cname(),
         // age: Random.number()
         'className|1-10': 10,
         'age|1-122': 122,
-        date: Random.date()
+        date: Random.date(),
+        'status|0-1': 0
     };
     for(let index = 0; index < params.pageSize; index ++) {
         dataList.push(Mock.mock(paramsObj))

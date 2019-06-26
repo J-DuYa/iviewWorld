@@ -69,21 +69,28 @@ Vue.component(ThEditor.name, ThEditor)
 Vue.component(ThMarkdown.name, ThMarkdown)
 
 // 引入mockjs
-require('./mock/mock.js')
+require('./mock/mock.js');
 
 // 使用语言包
 const il8n = new VueI18n({
     locale: Cookies.get('language') || 'en',
     message
-})
+});
+
+// 配置全局错误处理
+Vue.config.errorHandler = function (err, vm, info) {
+  if(err.toString().indexOf('_isHighlight') === -1) {
+    console.log("发生异常：" + err + '\n' + "错误信息：" + info);
+  }
+};
 
 // 请求
 window.ajax = ajax;
-Vue.prototype.$echarts = echarts
+Vue.prototype.$echarts = echarts;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
   render: h => h(App)
-})
+});
