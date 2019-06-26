@@ -1,7 +1,7 @@
 <template>
 	<div class="">
-		<TitleTip title="基础表格"></TitleTip>
-		<Form ref="searchInfo" :model="searchInfo" inline class="mt20">
+<!--		<TitleTip title="基础表格"></TitleTip>-->
+		<Form ref="searchInfo" :model="searchInfo" inline>
 			<FormItem label="姓名：" prop="name" :label-width="60">
 				<Input v-model.trim="searchInfo.name" placeholder="请输入姓名"></Input>
 			</FormItem>
@@ -19,7 +19,7 @@
 					:data.sync="userData"
 					:config.sync="config"
 					@chooseTr="chooseTr"
-					class="mt20">
+					ref="userTb">
 				<template slot="status" slot-scope="scope">
 					<Tag type="dot" :color="scope.scope.row.status === 0 ? 'error' : 'success'">{{ scope.scope.row.status === 0 ? '留校中' : '已毕业' }}</Tag>
 				</template>
@@ -103,10 +103,12 @@
         ],
         userData: [],
         config: {
+          name: "用户列表",
           stripe:true,
           showElevator: true,
           loading: false,
-          size: "small"
+          size: "small",
+          isHasExcel: true
         },
       }
     },
@@ -157,9 +159,6 @@
       },
       init() {
         this.getData()
-      },
-      showInfo() {
-        // console.log(this.selectTr)
       },
       // 表格高亮操作
       chooseTr(currentRow, oldCurrentRow) {
