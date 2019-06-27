@@ -1,9 +1,10 @@
 <template>
+<!--	-->
 	<div class="dy-table">
 		<div class="o_area">
 			<span class="o_title">{{config.name ? config.name : "数据列表"}}</span>
-			<Button type="primary" @click="exportExcel" v-if="config.isHasExcel"><Icon type="ios-download-outline"></Icon> 导出数据</Button>
-			<slot name="btns"></slot>
+			<Button type="primary" @click="exportCsv" v-if="config.isHasExcel"><Icon type="ios-download-outline"></Icon> 导出数据</Button>
+			<slot name="operBtn"></slot> <!-- 自定义插入内容 -->
 		</div>
 		<Table
 				highlight-row
@@ -61,7 +62,8 @@
       handleRowChange (currentRow, oldCurrentRow) {
 
       },
-      exportExcel () {
+      exportCsv () {
+        /*-- IE9暂时只支持英文，中文会显示为乱码 --*/
         this.$refs[this.refName].exportCsv({
           ...this.excelConfig
         });
@@ -73,7 +75,7 @@
 <style lang="less" scoped>
 .dy-table {
 	.o_area {
-		padding: 20px 0;
+		padding: 0 0 20px 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

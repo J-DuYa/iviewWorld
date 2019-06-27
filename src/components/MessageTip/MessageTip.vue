@@ -1,28 +1,28 @@
 <template>
-    <div class="t_messageTip">
-        <p class="t_warn-content">
-            <slot></slot>
-        </p>
-    </div>
+	<div class="t_messageTip">
+		<p class="t_warn-content">
+			<slot></slot>
+		</p>
+	</div>
 </template>
 
 <script>
-    export default {
-        name: "MessageTip",
-        props: {
+  export default {
+    name: "MessageTip",
+    props: {
 
-        },
-        data() {
-            return {
+    },
+    data() {
+      return {
 
-            }
-        },
-        methods: {
+      }
+    },
+    methods: {
 
-        }
     }
+  }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 
 </style>

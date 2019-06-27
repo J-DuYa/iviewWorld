@@ -38,10 +38,6 @@ export default new Router({
                   path: '/commonTable',
                   name: 'commonTable',
                   component: () => import('@/view/Tables/CommonTable')
-              }, { // 复杂表格
-                  path: '/complexTable',
-                  name: 'complexTable',
-                  component: () => import('@/view/Tables/ComplexTable')
               }, { // 仪表仪
                   path: '/dashbroad',
                   name: 'dashbroad',

@@ -58,13 +58,13 @@
         },
         methods: {
             onEditorBlur(e) {
-                this.$emit('editorBlur', e)
+                this.$emit("editorBlur", e)
             },
             onEditorFocus(e) {
-                this.$emit('editorFocus', e)
+                this.$emit("editorFocus", e)
             },
             onEditorChange(e) {
-                this.$emit('editorChange', e)
+                this.$emit("editorChange", e)
             }
         },
         watch: {

@@ -17,7 +17,7 @@
         props: {
             title: {
                 type: String,
-                default: '上传图片'
+                default: "上传图片"
             },
             isShowModel: {
                 type: Boolean,
@@ -32,7 +32,7 @@
         },
         methods: {
             closeModel() {
-              this.$emit('update:isShowModel', false)
+              this.$emit("update:isShowModel", false)
             },
             submitCropper() {
 

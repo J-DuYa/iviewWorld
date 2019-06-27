@@ -1,2 +1,2 @@
-import Cropper from './Cropper'
+import Cropper from './Cropper';
 export default Cropper;
