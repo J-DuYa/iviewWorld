@@ -30,10 +30,6 @@ export default new Router({
                   path: '/video',
                   name: 'video',
                   component: () => import('@/view/Video')
-              }, { // github地址
-                  path: '/github',
-                  name: 'github',
-                  component: () => import('@/view/Github')
               }, { // 不同table
                   path: '/commonTable',
                   name: 'commonTable',
@@ -58,10 +54,6 @@ export default new Router({
                   path: '/editor',
                   name: 'editor',
                   component: () => import('@/view/Editors/Editor')
-              }, { // weixin
-                  path: '/weixin',
-                  name: 'weixin',
-                  component: () => import('@/view/WeiXin/WeiXin')
               }
           ]
       }, { // 404

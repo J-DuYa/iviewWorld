@@ -88,29 +88,6 @@ const routers = [
       hasChild: false,
       parentId: '1'
     }]
-  }, {
-    id: '100',
-    parentsId: ['101'],
-    menuUrl: '',
-    title: '微信',
-    icon: 'ios-chatbubbles',
-    hasChild: true,
-    child: [{
-      id: '102',
-      menuUrl: 'weixin',
-      title: '微信',
-      icon: 'ios-chatbubbles',
-      hasChild: false,
-      parentId: '101'
-    }]
-  },
-  {
-    id: '9999',
-    parentsId: ['9999'],
-    menuUrl: 'github',
-    title: 'github',
-    icon: 'logo-github',
-    hasChild: false
   }
 ]
 export default routers;
