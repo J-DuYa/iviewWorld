@@ -6,7 +6,7 @@
 
 > 账号: admin 密码: 123456  
 
-可以查看一下另一个项目 样式还可以https://github.com/dyJunZou/dy-vue-template
+可以查看一下另一个项目使用的是vue-antd ui写的 样式觉得还是很okay的，能够适配移动端，地址：https://github.com/dyJunZou/dy-vue-template
 
 ### 整体架构
 - vue  前端使用的语言框架
