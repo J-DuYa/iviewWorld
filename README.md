@@ -3,10 +3,10 @@
 > 在茫茫人海中，你只给别人杯水般的帮助，对别人来说都是无法比拟的。 谢谢那些帮助过我的好人😝
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-![Build Status](https://camo.githubusercontent.com/f1e43ea61f962932d2fd7e05c558eb460191f41e/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f7675652e737667)
-![Build Status](https://camo.githubusercontent.com/9a140a4c68e7c178bc660bee7675f4f25ff7ade3/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f7675652e737667)
 
 > 账号: admin 密码: 123456  
+
+可以查看一下另一个项目使用的是vue-antd ui写的 样式觉得还是很okay的，能够适配移动端，地址：https://github.com/dyJunZou/dy-vue-template
 
 > i love her(Q)
 
